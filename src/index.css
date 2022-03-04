@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'HauntedMoon';
+  src: url(fonts/HauntedMoonRegular-j240.ttf);
+}
+@font-face {
+  font-family: 'OctoberMoon';
+  src: url(fonts/OctoberMoon-deql.ttf);
+}
+@font-face {
+  font-family: 'BirdLove';
+  src: url(fonts/Birdlove-jE1Pv.ttf);
+}
+@font-face {
+  font-family: 'Goldleaf';
+  src: url(fonts/GoldleafBoldPersonalUseBold-eZ4dO.ttf);
+}
+@font-face {
+  font-family: 'Letters';
+  src: url(fonts/Letters-for-Learners.ttf);
+}
+
+h1 { font-size: 5rem !important;}
+h2 { font-size: 4rem !important;}
+h3 { font-size: 3rem !important;}
+h4 { font-size: 2.5rem !important;}
+h5 { font-size: 2rem !important;}
+p {
+  font-family: 'Letters'; 
+  color:#666;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.haunted-moon {
+  font-family: 'HauntedMoon';
+}
+.october-moon {
+  font-family: 'OctoberMoon';
+}
+.birdlove {
+  font-family: 'BirdLove';
+}
+.goldleaf {
+  font-family: 'Goldleaf';
+}
+
+html {
+  font-family: 'BirdLove';
+  font-size: 1.5rem;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.vanilla-link {
+  text-decoration: none;
+  color: #666;
+  cursor: pointer;
+}
+.vanilla-link:hover {
+  color: #333;
+  text-decoration: none;
+}
+.link {
+  font-family: 'Goldleaf';
+  text-decoration: none;
+  color: #666;
+  border-bottom: 5px solid rgb(248,249,250);
+  cursor: pointer;
+}
+.link:hover {
+  color: #333;
+  border-bottom: 5px solid crimson;
+}
+.link.w-children {
+  cursor: default;
+}
+.link.w-children:hover {
+  border-bottom: 5px solid rgb(248,249,250);
+}
+.link-wrapper {
+  border-top: 5px solid #666;
+}
+.gift-registry-back {
+  background-color: rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  margin: 2rem;
+}
+.footer > div {
+  background-position: center -140px !important;
+  
+}
+
+
