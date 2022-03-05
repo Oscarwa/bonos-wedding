@@ -29,6 +29,8 @@ p {
   color:#666;
   text-align: justify;
   font-weight: bold;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .haunted-moon {

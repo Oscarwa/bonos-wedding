@@ -2,6 +2,7 @@ import { FC } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import gifts from '../../images/gifts.jpg';
 import amazon from '../../images/amazon.webp';
+import { Col } from "react-bootstrap";
 
 const GiftRegistry: FC = () => {
   return (
@@ -18,15 +19,17 @@ const GiftRegistry: FC = () => {
           { image: gifts, speed: 5 },
           {
             children: (
-              <div className="gift-registry-back">
-                <a
-                  href="https://www.amazon.com.mx/wedding/share/Bonos-wedding-2022"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                <h3 className="vanilla-link pt-3"> Bonos Wedding 2022</h3>
-                  <img height="250px" src={amazon} alt="Amazon" />
-                </a>
+              <div className="gift-registry-back d-flex justify-content-center m-md-5 m-3">
+                <Col sm={12} md={8}>
+                  <a
+                    href="https://www.amazon.com.mx/wedding/share/Bonos-wedding-2022"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <h3 className="vanilla-link pt-3"> Bonos Wedding 2022</h3>
+                    <img className="w-100" src={amazon} alt="Amazon" />
+                  </a>
+                </Col>
               </div>
             ),
           },
