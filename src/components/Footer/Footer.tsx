@@ -5,13 +5,9 @@ import bonos_01 from '../../images/bonos_01.webp';
 
 const Footer: FC = () => {
     return (
-      <>
-        <ParallaxBanner
-          layers={[{ image: bonos_01, speed: 0}]}
-          className="footer"
-          style={{ height: "250px" }}
-        />
-      </>
+      <footer>
+        <img src={bonos_01} alt="bonos" style={{objectFit: 'cover', width: '100%', height: '400px'}} />
+      </footer>
     );
 }
 

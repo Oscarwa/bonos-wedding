@@ -8,10 +8,10 @@ const AboutUs: FC = () => {
   return (
     <>
       <Row>
-        <Col sm={6}>
+        <Col lg={6}>
           <Him />
         </Col>
-        <Col sm={6}>
+        <Col lg={6}>
           <Her />
         </Col>
       </Row>

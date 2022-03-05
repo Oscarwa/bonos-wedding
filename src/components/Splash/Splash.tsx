@@ -12,8 +12,8 @@ const Splash: FC = () => {
     return (
       <section className="text-center birdlove">
         <div className="p-4" />
-        <h1 className="october-moon p-4">Ilse & Oscar</h1>
-        <div className="d-flex align-items-center justify-content-center">
+        <h2 className="october-moon p-4">Ilse & Oscar</h2>
+        <div className="d-flex align-items-center justify-content-center flex-column flex-md-row">
           <h3>
             Oct 22<sup>th</sup> 2022
           </h3>

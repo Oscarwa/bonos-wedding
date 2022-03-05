@@ -7,7 +7,7 @@ const Her: FC = () => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center">
-        <h2 className="text-center october-moon py-3">Ilse Arellano</h2>
+        <h3 className="text-center october-moon py-3">Ilse Arellano</h3>
       </div>
       <ParallaxBanner
         layers={[{ image: her_01, speed: -20 }]}

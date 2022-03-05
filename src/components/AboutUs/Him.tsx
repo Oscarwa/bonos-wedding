@@ -7,7 +7,7 @@ const Him: FC = () => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center">
-        <h2 className="text-center october-moon py-3">Oscar Barba!</h2>
+        <h3 className="text-center october-moon py-3">Oscar Barba!</h3>
       </div>
       <Row>
         <Col>

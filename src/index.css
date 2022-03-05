@@ -97,4 +97,12 @@ code {
   
 }
 
+button.btn-link {
+  color: #555;
+  box-shadow: none;
+}
+button.btn-link:hover {
+  color: #777777;
+}
+
 
