@@ -3,10 +3,10 @@ import Perritu from "./Perritu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-import nugget from '../../images/nugget.jpg';
-import donatella from '../../images/donatella.jpg';
-import tepe from '../../images/tepe.jpg';
-import kiki from '../../images/kiki.jpg';
+import nugget from '../../images/nugget1.jpg';
+import donatella from '../../images/donatella1.jpg';
+import tepe from '../../images/tepe1.jpg';
+import kiki from '../../images/kiki1.jpg';
 
 const Family: FC = () => {
   return (
@@ -46,11 +46,14 @@ const Family: FC = () => {
       </Perritu>
       <Perritu name="Tepe" photo={tepe} reverse>
         <p>
-          El perrito petacón más querido y más odiado por todos, fue la primera
-          mascota que adoptamos e inmediatamente nos enamoramos de él. Le gusta
-          mucho romper juguetes, entre más humildes mejor (es súper feliz con un
-          bote de plastico de coca vacío). Es el guarura personal de Ilse, no
-          deja que nadie se le acerque
+          Que significa Tepe te estarás preguntando, nosotros tampoco lo
+          sabemos. La adoptamos en mayo del 2018? Con el nombre de Bella. Estaba
+          toda flaquita hasta los huesos y acababa de tener cachorritos. Después
+          de pasar por los nombres Canela {">"} Tripita {">"} Chapita {"> "}
+          Chepe, finalmente terminó deformado en Tepe. Es muy nerviosa y miedosa
+          con todas las personas y después de años sigue sin aprender en hacer
+          sus necesidades donde debe pero fuera de eso es la perrita mas buena y
+          hermosa.
         </p>
       </Perritu>
       <Perritu name="Kiki" photo={kiki}>

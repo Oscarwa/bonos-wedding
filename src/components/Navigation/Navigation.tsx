@@ -15,7 +15,6 @@ const Navigation: FC = () => {
 
   return (
     <Navbar
-      bg="light"
       className="justify-content-md-center"
       style={{ zIndex: 1000 }}
     >

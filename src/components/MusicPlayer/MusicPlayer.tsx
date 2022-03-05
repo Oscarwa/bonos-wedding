@@ -10,7 +10,7 @@ import {
   faVolumeUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC, useMemo, useRef, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import ReactHowler from "react-howler";
 import './style.css';
@@ -43,7 +43,6 @@ const MusicPlayer: FC = () => {
   const [isMute, setIsMute] = useState(false);
   const [songIndex, setSongIndex] = useState(0);
   const [volume, setVolume] = useState(0.2);
-  const audioRef = useRef();
 
   const shuffleArray = (array: any[]) => {
     for (var i = array.length - 1; i > 0; i--) {
@@ -107,10 +106,10 @@ const MusicPlayer: FC = () => {
   return (
     <section className="music-player d-flex align-items-center justify-content-between">
       <div className="d-flex align-items-center">
-        <div className="ps-3">
+        <div className="ps-3 d-none d-md-block">
           <FontAwesomeIcon icon={faMusic} />
         </div>
-        <div className="controls d-flex align-items-center px-5">
+        <div className="controls d-flex align-items-center px-1 px-md-5">
           <Button onClick={handlePrevious} variant="link">
             <FontAwesomeIcon icon={faBackwardStep} />
           </Button>

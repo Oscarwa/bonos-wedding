@@ -13,7 +13,7 @@ const Perritu: FC<PerrituProps> = ({ name, photo, reverse = false, children }) =
     <Row className="pt-3 pb-5">
       {reverse ? (
         <Col>
-          <h3 className="text-center birdlove py-3 m-0">{name}</h3>
+          <h3 className="text-center birdlove pt-3 m-0">{name}</h3>
           {children}
         </Col>
       ) : null}
@@ -26,7 +26,7 @@ const Perritu: FC<PerrituProps> = ({ name, photo, reverse = false, children }) =
       </Col>
       {!reverse ? (
         <Col>
-          <h3 className="text-center birdlove py-3 m-0">{name}</h3>
+          <h3 className="text-center birdlove pt-3 m-0">{name}</h3>
           {children}
         </Col>
       ) : null}

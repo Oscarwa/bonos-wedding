@@ -45,6 +45,13 @@ p {
 .goldleaf {
   font-family: 'Goldleaf';
 }
+.letters {
+  font-family: 'Letters';
+}
+
+.color-normal {
+  color:#666;
+}
 
 html {
   font-family: 'BirdLove';
@@ -60,6 +67,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar {
+  background-color: #EEE;
+}
 .vanilla-link {
   text-decoration: none;
   color: #666;
@@ -73,7 +83,7 @@ code {
   font-family: 'Goldleaf';
   text-decoration: none;
   color: #666;
-  border-bottom: 5px solid rgb(248,249,250);
+  border-bottom: 5px solid #EEE;
   cursor: pointer;
 }
 .link:hover {
@@ -84,7 +94,7 @@ code {
   cursor: default;
 }
 .link.w-children:hover {
-  border-bottom: 5px solid rgb(248,249,250);
+  border-bottom: 5px solid #EEE;
 }
 .link-wrapper {
   border-top: 5px solid #666;
@@ -94,6 +104,14 @@ code {
   border-radius: 30px;
   margin: 2rem;
 }
+
+html {
+  height: 100%;
+}
+body, #root {
+  min-height: 100%;
+}
+ 
 .footer > div {
   background-position: center -140px !important;
   
@@ -105,6 +123,20 @@ button.btn-link {
 }
 button.btn-link:hover {
   color: #777777;
+}
+
+.hacienda-logo {
+  background-color: #5d523d ;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.carousel {
+  
+    object-fit: cover;
+    width: 100%;
+    height: 600px;
+  
 }
 
 
