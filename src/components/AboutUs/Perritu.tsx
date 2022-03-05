@@ -10,7 +10,7 @@ interface PerrituProps {
 
 const Perritu: FC<PerrituProps> = ({ name, photo, reverse = false, children }) => {
   return (
-    <Row className="py-3">
+    <Row className="pt-3 pb-5">
       {reverse ? (
         <Col>
           <h3 className="text-center birdlove py-3 m-0">{name}</h3>

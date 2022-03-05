@@ -13,6 +13,7 @@ import ComingSoon from './components/ComingSoon/ComingSoon';
 import GiftRegistry from './components/GiftRegistry/GiftRegistry';
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 import AboutUs from './components/AboutUs/AboutUs';
+import Location from './components/Wedding/Location';
 
 const App: FC = () => {
 
@@ -25,7 +26,7 @@ const App: FC = () => {
             <Route path="/" element={<Splash />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/story" element={<Story />} />
-            <Route path="/location" element={<ComingSoon />} />
+            <Route path="/location" element={<Location />} />
             <Route path="/accomodation" element={<ComingSoon />} />
             <Route path="/gift-registry" element={<GiftRegistry />} />
             <Route path="/location" element={<ComingSoon />} />

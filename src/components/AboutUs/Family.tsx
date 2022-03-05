@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Col, Row } from "react-bootstrap";
 import Perritu from "./Perritu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -12,15 +11,14 @@ import kiki from '../../images/kiki.jpg';
 const Family: FC = () => {
   return (
     <>
-      <h4 className="d-flex align-items-center justify-content-center text-center october-moon py-3">
-        {" "}
+      <h4 className="d-flex align-items-center justify-content-center text-center october-moon py-5">
         <FontAwesomeIcon
           icon={faHeart}
           color="crimson"
           size="xs"
           className="px-2 mb-2"
         />
-        Our Family!{" "}
+        Our Family!
         <FontAwesomeIcon
           icon={faHeart}
           color="crimson"
@@ -64,6 +62,7 @@ const Family: FC = () => {
           deja que nadie se le acerque
         </p>
       </Perritu>
+      <div className="py-5"></div>
     </>
   );
 };
