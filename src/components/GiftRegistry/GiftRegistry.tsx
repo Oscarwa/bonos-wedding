@@ -3,6 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import gifts from '../../images/gifts.jpg';
 import amazon from '../../images/amazon.webp';
 import { Col } from "react-bootstrap";
+import PayPalDonate from "./PayPalDonate";
 
 const GiftRegistry: FC = () => {
   return (
@@ -37,6 +38,10 @@ const GiftRegistry: FC = () => {
         className=""
         style={{ height: "600px" }}
       />
+      <div>
+        <p>Si por alguna razon no encontraron algo que les gustara del todo, estaba agotado o simplemente quieren apoyarnos más y/o de otra manera, les dejamos un botón de donativo via PayPal, GRACIAS!</p>
+        <PayPalDonate />
+      </div>
       <p>
         Sepan que estamos al pendiente y cualquier duda nos pueden preguntar!
       </p>

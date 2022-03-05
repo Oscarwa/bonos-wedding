@@ -132,11 +132,16 @@ button.btn-link:hover {
 }
 
 .carousel {
-  
     object-fit: cover;
     width: 100%;
     height: 600px;
-  
+}
+
+.paypal {
+    background-color: #ffc439;
+    border: 3px solid #ffaf0c;
+    border-radius: 20px;
+    width: 350px;
 }
 
 
