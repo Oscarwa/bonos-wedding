@@ -28,41 +28,42 @@ const Family: FC = () => {
       </h4>
       <Perritu name="Nugget" photo={nugget} reverse>
         <p>
-          El perrito petacón más querido y más odiado por todos, fue la primera
-          mascota que adoptamos e inmediatamente nos enamoramos de él. Le gusta
-          mucho romper juguetes, entre más humildes mejor (es súper feliz con un
-          bote de plastico de coca vacío). Es el guarura personal de Ilse, no
-          deja que nadie se le acerque
+          El primogénito. Adoptarlo es la mejor decisión que pudimos tomar
+          porque con él comenzó nuestra familia perruna. Es un salchicho muy
+          gruñón y ama ladrar pero también es muy cariñoso y se preocupa mucho
+          por sus papás y sus hermanas. Nunca se cansa de jugar y es muy
+          molestito para quien no le tiene paciencia pero en esta casa es el
+          rey. Es el guarura personal de Ilse, no deja que nadie se le acerque
         </p>
       </Perritu>
       <Perritu name="Donatella" photo={donatella}>
         <p>
-          El perrito petacón más querido y más odiado por todos, fue la primera
-          mascota que adoptamos e inmediatamente nos enamoramos de él. Le gusta
-          mucho romper juguetes, entre más humildes mejor (es súper feliz con un
-          bote de plastico de coca vacío). Es el guarura personal de Ilse, no
-          deja que nadie se le acerque
+          Donita se adoptó sola, llegó y supo ganarnos inmediatamente. Es la más
+          noble de sus hermanitos, muy educada y cariñosa. A veces es muy
+          necesitada de atención y no te deja ver con una mirada creepy hasta
+          que le haces caso. Tiene carácter fuerte y se aloca cuando no está de
+          humor pero aún así es muy buena.
         </p>
       </Perritu>
       <Perritu name="Tepe" photo={tepe} reverse>
         <p>
           Que significa Tepe te estarás preguntando, nosotros tampoco lo
-          sabemos. La adoptamos en mayo del 2018? Con el nombre de Bella. Estaba
-          toda flaquita hasta los huesos y acababa de tener cachorritos. Después
-          de pasar por los nombres Canela {">"} Tripita {">"} Chapita {"> "}
-          Chepe, finalmente terminó deformado en Tepe. Es muy nerviosa y miedosa
-          con todas las personas y después de años sigue sin aprender en hacer
-          sus necesidades donde debe pero fuera de eso es la perrita mas buena y
-          hermosa.
+          sabemos. Ella nació en Ciudad Mante Tamaulipas, tuvo una vida difícil
+          hasta el momento que la rescataron de la calle. Cuando llegó a nuestra
+          familia era muy flaquita y se ganó el apodo de tripita. Su nombre
+          oficial es Cajeta pero con el tiempo sus apodos ganaron peso y de
+          alguna forma llegamos a Tepe. Es una gordita muy cariñosa, ama dar
+          besitos y gritar cuando está feliz. Su actividad favorita es morder
+          calcetas recién quitadas y tomar el sol.
         </p>
       </Perritu>
       <Perritu name="Kiki" photo={kiki}>
         <p>
-          El perrito petacón más querido y más odiado por todos, fue la primera
-          mascota que adoptamos e inmediatamente nos enamoramos de él. Le gusta
-          mucho romper juguetes, entre más humildes mejor (es súper feliz con un
-          bote de plastico de coca vacío). Es el guarura personal de Ilse, no
-          deja que nadie se le acerque
+          La bebé de la casa. La mejor palabra para definirla es <i>loca</i> porque
+          nunca te vas a aburrir viéndola. Es muy amigable con la gente y con
+          sus hermanos a los cuales AMA molestar todo el tiempo y se ofende
+          mucho si no le hacen caso. Tiene una extraña fijación de estar siempre
+          con la Tepe y usarla de asiento.
         </p>
       </Perritu>
       <div className="py-5"></div>
