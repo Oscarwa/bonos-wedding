@@ -1,0 +1,32 @@
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FC } from "react";
+import { Button } from "react-bootstrap";
+import { useDatabaseObjectData, useFirebaseApp } from "reactfire";
+import { getDatabase, ref, set } from 'firebase/database';
+
+const Counter: FC = () => {
+    const app = useFirebaseApp();
+    const db = getDatabase(app);
+    const countRef = ref(db, 'counter');
+
+    const { status, data: counter } = useDatabaseObjectData<number>(countRef);
+
+  const handleHeartClick = () => {
+      const newVal = counter + 1;
+      set(countRef, newVal);
+  };
+
+  return status === "success" ? (
+    <div className="mt-5">
+      <Button variant="link" onClick={handleHeartClick}>
+        <FontAwesomeIcon icon={faHeart} color="crimson" size="7x" />
+      </Button>
+      <div className="letters fs-3">
+        clicked {counter.toLocaleString()} times
+      </div>
+    </div>
+  ) : null;
+};
+
+export default Counter;
