@@ -1,14 +1,32 @@
 import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import { FC } from "react";
+import { getDatabase, ref, set } from "firebase/database";
+import { FC, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { useFirebaseApp, useUser } from "reactfire";
+import { useDatabaseObjectData, useFirebaseApp, useUser } from "reactfire";
+import { User } from "../../models/User";
 
 const AuthProtected: FC = ({ children }) => {
   const app = useFirebaseApp();
+  const db = getDatabase(app);
+  const { data: user } = useUser();
+  const userRef = ref(db, `users/${user?.uid}`);
+  const { data: internalUser, status: internalStatus } = useDatabaseObjectData<User>(userRef);
+
+  useEffect(() => {
+    if (internalStatus === "success" && internalUser === null && user) {
+      const newUser: User = {
+        displayName: user.displayName,
+        email: user.email,
+        photoUrl: user.photoURL,
+        uid: user.uid,
+        canRsvp: false,
+      };
+      set(userRef, newUser);
+    }
+  }, [internalUser, internalStatus, user, userRef]);
 
   const auth = getAuth(app);
 
-  const { data: user } = useUser();
   const handleLogin = async () => {
     await signInWithPopup(auth, new FacebookAuthProvider());
   };

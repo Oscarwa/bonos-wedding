@@ -27,28 +27,26 @@ const CommentsSection: FC = () => {
         {sortedMessages?.map((m: Message, index: number) => (
           <Col key={index} sm={12} lg={6} className="pb-3">
             <Card>
-              <Card.Body className="px-2 py-1">
-                <Card.Text>
-                  <div>
-                    <div className="d-flex flex-row">
-                      <img
-                        className="me-2"
-                        width={80}
-                        src={m.photo}
-                        alt={m.user}
-                      />
-                      <div>
-                        <div className="fs-5 color-black">{m.user}</div>
-                        <time className="color-ebony">
-                          {formatRelative(new Date(m.time), new Date(), {
-                            locale: es,
-                          })}
-                        </time>
-                      </div>
+              <Card.Body className="px-2 py-1 letters">
+                <div>
+                  <div className="d-flex flex-row">
+                    <img
+                      className="me-2"
+                      width={80}
+                      src={m.photo}
+                      alt={m.user}
+                    />
+                    <div>
+                      <div className="fs-5 color-black bold">{m.user}</div>
+                      <time className="color-ebony italic">
+                        {formatRelative(new Date(m.time), new Date(), {
+                          locale: es,
+                        })}
+                      </time>
                     </div>
-                    <p>{m.text}</p>
                   </div>
-                </Card.Text>
+                  <p>{m.text}</p>
+                </div>
               </Card.Body>
             </Card>
           </Col>

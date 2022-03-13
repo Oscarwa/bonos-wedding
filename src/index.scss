@@ -199,6 +199,13 @@ body, #root {
   min-height: 100%;
   overflow-x: hidden;
 }
+
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
  
 .footer > div {
   background-position: center -140px !important;

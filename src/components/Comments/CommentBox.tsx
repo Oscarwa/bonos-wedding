@@ -28,9 +28,6 @@ const CommentBox: FC = () => {
     <AuthProtected>
       <section>
         <Form.Group className="mb-3">
-          <Form.Label>
-            Quieres dejarnos un comentario u agradecimiento?
-          </Form.Label>
           <Form.Control
             as="textarea"
             className="letters"
@@ -43,7 +40,7 @@ const CommentBox: FC = () => {
               className="color-ivory bg-color-charcoal goldleaf"
               onClick={handleSend}
             >
-              Enviar
+              Comentar {user? `como ${user.displayName}` : null}
             </Button>
           </div>
         </Form.Group>

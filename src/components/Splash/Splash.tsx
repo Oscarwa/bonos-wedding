@@ -58,6 +58,7 @@ const Splash: FC = () => {
         </Container>
         <Counter />
         <Container>
+          <div className="fs-4 goldleaf pb-1">Comentanos algo bonito!</div>
           <CommentBox />
           <CommentsSection />
         </Container>
