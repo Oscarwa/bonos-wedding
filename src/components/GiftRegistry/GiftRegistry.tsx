@@ -34,14 +34,14 @@ const GiftRegistry: FC = () => {
                         <br />
                         Wedding Fest
                       </h3>
-                      <img className="w-100" src={amazon} alt="Amazon" />
+                      <img className="w-100 grayscale-0" src={amazon} alt="Amazon" />
                     </a>
                   </Col>
                 </div>
               ),
             },
           ]}
-          className="grayscale-90"
+          className="grayscale-50"
           style={{ height: "600px" }}
         />
         <div>

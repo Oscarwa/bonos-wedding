@@ -16,7 +16,7 @@ const PayPalDonate = () => {
         });
         button.render(`#${buttonRef.current.id}`);
     }, []);
-    return (<div className="d-flex justify-content-center grayscale-75">
+    return (<div className="d-flex justify-content-center grayscale-25">
         <div ref={buttonRef} id={buttonId} className="paypal" />
     </div>
     );

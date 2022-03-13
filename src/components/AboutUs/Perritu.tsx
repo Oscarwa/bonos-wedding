@@ -20,8 +20,8 @@ const Perritu: FC<PerrituProps> = ({ name, photo, reverse = false, children }) =
       <Col md={6}>
         <ParallaxBanner
           layers={[{ image: photo, speed: -5 }]}
-          className=""
-          style={{ height: "400px", borderRadius: "20px", filter: 'grayscale(0.7)' }}
+          className="grayscale-25"
+          style={{ height: "400px", borderRadius: "20px" }}
         />
       </Col>
       {!reverse ? (

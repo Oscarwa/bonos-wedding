@@ -4,6 +4,8 @@ import Counter from "./Counter";
 import cover from "../../images/cover.jpg";
 
 import "./style.scss";
+import CommentBox from "../Comments/CommentBox";
+import CommentsSection from "../Comments/CommentsSection";
 
 const Splash: FC = () => {
   const eventDate = new Date(2022, 9, 22);
@@ -24,7 +26,7 @@ const Splash: FC = () => {
           <Row>
             <Col lg={6} className="position-relative">
               <div
-                className="d-block d-lg-none color-ivory shadow-charcoal-2 position-absolute text-center pt-4 splash-bg-gradient-1"
+                className="d-block d-lg-none color-white shadow-charcoal position-absolute text-center pt-4 splash-bg-gradient-1"
                 style={{ zIndex: 1200 }}
               >
                 <h1 className="fs-1 pt-1">Ilse & Oscar</h1>
@@ -55,6 +57,10 @@ const Splash: FC = () => {
           </Row>
         </Container>
         <Counter />
+        <Container>
+          <CommentBox />
+          <CommentsSection />
+        </Container>
       </Container>
     </section>
   );

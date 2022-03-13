@@ -9,7 +9,7 @@ import kiki from '../../images/kiki1.jpg';
 const Family: FC = () => {
   return (
     <>
-      <h4 className="d-flex align-items-center justify-content-center shadow-charcoal-2 text-center py-5">
+      <h4 className="d-flex align-items-center justify-content-center shadow-charcoal text-center py-5">
         Our Family!
       </h4>
       <Perritu name="Nugget" photo={nugget} reverse>

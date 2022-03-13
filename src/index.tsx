@@ -5,12 +5,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { FirebaseAppProvider } from 'reactfire';
+import { firebaseConfig } from './services/firebase';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <App />
+    </FirebaseAppProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

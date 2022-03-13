@@ -40,7 +40,7 @@ const Location: FC = () => {
 
   return (
     <Container>
-      <h2 className="shadow-charcoal-2 text-center py-4 fs-1">
+      <h2 className="shadow-charcoal text-center py-4 fs-1">
         Hacienda Tovares
       </h2>
       <Row className="d-flex flex-row align-items-center">

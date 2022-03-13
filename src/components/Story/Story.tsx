@@ -9,7 +9,7 @@ const Story: FC = () => {
     <Container>
       <Row>
         <Col sm={12}>
-          <h2 className="fs-1 shadow-charcoal-2 text-center p-4">
+          <h2 className="fs-1 shadow-charcoal text-center p-4">
             Nuestra Historia
           </h2>
         </Col>
@@ -25,7 +25,7 @@ const Story: FC = () => {
             solicitud de amistad en Facebook, Ilse aceptó esa invitación pero
             como buenos ñoños introvertidos casi no hablabamos o nos daba pena
             iniciar una conversación, una cosa llevo a la otra y poco tiempo
-            despué, un 5 de mayo se pusieron de acuerdo para su primer cita en
+            después, un 5 de mayo se pusieron de acuerdo para su primer cita en
             'Trece Lunas' un restaurante muy alternativo y padre que está en
             barrio antiguo. . . a aquellos jovenes ilusos nunca se les hubiera
             ocurrido que 9 años después estarían por casarse.

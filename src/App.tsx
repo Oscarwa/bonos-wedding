@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { FirebaseAppProvider } from 'reactfire';
+import { AuthProvider, useFirebaseApp } from 'reactfire';
 
 import Splash from './components/Splash/Splash';
 import Navigation from './components/Navigation/Navigation';
@@ -17,28 +17,31 @@ import Location from './components/Wedding/Location';
 import Accomodation from './components/Wedding/Accomodation';
 
 // Import the functions you need from the SDKs you need
-import { firebaseConfig } from './services/firebase';
+import { getAuth } from 'firebase/auth';
 
 const App: FC = () => {
+  const app = useFirebaseApp();
+  const auth = getAuth(app);
+
   return (
     <ParallaxProvider>
       <BrowserRouter>
-        <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+        <AuthProvider sdk={auth}>
           <ToastContainer />
           <Navigation />
-            <Routes>
-              <Route path="/" element={<Splash />} />
-              <Route path="/about-us" element={<AboutUs />} />
-              <Route path="/story" element={<Story />} />
-              <Route path="/location" element={<Location />} />
-              <Route path="/accomodation" element={<Accomodation />} />
-              <Route path="/gift-registry" element={<GiftRegistry />} />
-              <Route path="/location" element={<ComingSoon />} />
-              <Route path="/rsvp" element={<ComingSoon />} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Splash />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/story" element={<Story />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/accomodation" element={<Accomodation />} />
+            <Route path="/gift-registry" element={<GiftRegistry />} />
+            <Route path="/location" element={<ComingSoon />} />
+            <Route path="/rsvp" element={<ComingSoon />} />
+          </Routes>
           <Footer />
           <MusicPlayer />
-        </FirebaseAppProvider>
+        </AuthProvider>
       </BrowserRouter>
     </ParallaxProvider>
   );

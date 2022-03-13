@@ -26,7 +26,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({
         >
           {text}
           {isShown ? (
-            <div className="position-absolute bg-color-black link-wrapper">
+            <div className="position-absolute bg-color-dark link-wrapper">
               {children}
             </div>
           ) : null}

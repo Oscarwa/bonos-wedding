@@ -10,7 +10,7 @@ const Lodging: FC = () => {
     <>
       <Row className="d-flex flex-row align-items-top pb-3">
         <Col sm={12}>
-          <h2 className="shadow-charcoal-2 fs-1 text-center py-4">Hospedaje</h2>
+          <h2 className="shadow-charcoal fs-1 text-center py-4">Hospedaje</h2>
         </Col>
         <Col sm={12} md={4} lg={3}>
           <div className="hacienda-logo">

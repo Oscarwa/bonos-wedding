@@ -11,7 +11,7 @@ const Activities: FC = () => {
     <>
       <Row className="d-flex flex-row align-items-top pb-3">
         <Col sm={12}>
-          <h2 className="shadow-charcoal-2 fs-1 text-center py-4">
+          <h2 className="shadow-charcoal fs-1 text-center py-4">
             Actividades
           </h2>
         </Col>
