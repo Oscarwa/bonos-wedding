@@ -3,6 +3,15 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import chat from "../../images/chat.png";
 import beginning from "../../images/beginning.jpg";
+import adventure1 from "../../images/adventure1.jpg";
+import adventure2 from "../../images/adventure2.jpg";
+import adventure3 from "../../images/adventure3.jpg";
+import petsLovers from "../../images/pets-lovers.jpg";
+import home1 from "../../images/home1.jpg";
+import home2 from "../../images/home2.jpg";
+import moving from "../../images/moving.jpg";
+import sheSaidYes from "../../images/she-said-yes.jpg";
+import iAmThem from "../../images/i-am-them.jpeg";
 
 const Story: FC = () => {
   return (
@@ -14,7 +23,7 @@ const Story: FC = () => {
           </h2>
         </Col>
       </Row>
-      <Row>
+      <Row className="pb-3">
         <Col sm={12} md={6} lg={8}>
           <p>
             Todo comenzó un 5 de abril del 2013. Era el cumpleaños de una muy
@@ -35,7 +44,7 @@ const Story: FC = () => {
           <img src={chat} alt="chat" className="w-100" />
         </Col>
       </Row>
-      <Row>
+      <Row className="pb-3">
         <Col sm={12} md={6} lg={4}>
           <img src={beginning} alt="chat" className="w-100" />
         </Col>
@@ -50,8 +59,11 @@ const Story: FC = () => {
           </p>
         </Col>
       </Row>
-      <Row>
-        <Col sm={12} md={6} lg={8}>
+      <Row className="pb-3">
+        <Col sm={12} md={4} lg={3}>
+          <img src={adventure3} alt="chat" className="w-100" />
+        </Col>
+        <Col sm={12} md={4} lg={6}>
           <p>
             Muchas aventuras después, muchas experiencias, viajes, travesuras,
             enojos, enseñanzas, consejos y regaños; siempre aprendiendo el uno
@@ -62,13 +74,14 @@ const Story: FC = () => {
             relucir lo mejor de los 2.
           </p>
         </Col>
-        <Col sm={12} md={6} lg={4}>
-          <img src={beginning} alt="chat" className="w-100" />
+        <Col sm={12} md={4} lg={3}>
+          <img src={adventure1} alt="chat" className="w-100 pb-2" />
+          <img src={adventure2} alt="chat" className="w-100" />
         </Col>
       </Row>
-      <Row>
+      <Row className="pb-3">
         <Col sm={12} md={6} lg={4}>
-          <img src={beginning} alt="chat" className="w-100" />
+          <img src={petsLovers} alt="chat" className="w-100" />
         </Col>
         <Col sm={12} md={6} lg={8}>
           <p>
@@ -80,8 +93,11 @@ const Story: FC = () => {
           </p>
         </Col>
       </Row>
-      <Row>
-        <Col sm={12} md={6} lg={8}>
+      <Row className="pb-3">
+        <Col sm={12} md={4} lg={3}>
+          <img src={home1} alt="chat" className="w-100" />
+        </Col>
+        <Col sm={12} md={4} lg={6}>
           <p>
             En 2019 tomaron la decisión de vivir juntos (en pecado) y comenzaron
             las pruebas de vivir como adultos, pero siempre conservando la ñoñez
@@ -91,13 +107,13 @@ const Story: FC = () => {
             completar la pequeña familia.
           </p>
         </Col>
-        <Col sm={12} md={6} lg={4}>
-          <img src={beginning} alt="chat" className="w-100" />
+        <Col sm={12} md={4} lg={3}>
+          <img src={home2} alt="chat" className="w-100" />
         </Col>
       </Row>
-      <Row>
+      <Row className="pb-3">
         <Col sm={12} md={6} lg={4}>
-          <img src={beginning} alt="chat" className="w-100" />
+          <img src={moving} alt="chat" className="w-100" />
         </Col>
         <Col sm={12} md={6} lg={8}>
           <p>
@@ -108,7 +124,7 @@ const Story: FC = () => {
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row className="pb-3">
         <Col sm={12} md={6} lg={8}>
           <p>
             En diciembre de 2021, Oscar eligió el lugar de la primera cita con
@@ -117,18 +133,31 @@ const Story: FC = () => {
           </p>
         </Col>
         <Col sm={12} md={6} lg={4}>
-          <img src={beginning} alt="chat" className="w-100" />
+          <img src={sheSaidYes} alt="chat" className="w-100" />
         </Col>
       </Row>
-      <Row>
-        <Col sm={12} md={6} lg={4}>
-          <img src={beginning} alt="chat" className="w-100" />
+      <Row className="pb-3">
+        <Col sm={12}>
+          <iframe
+            className="w-100"
+            height="400"
+            src="https://www.youtube.com/embed/jBzxh-8JjPU?&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"
+            title="YouTube video player"
+            frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </Col>
+      </Row>
+      <Row className="pb-3">
         <Col sm={12} md={6} lg={8}>
           <p>
             Pueden preguntarse, como es que sabe tanto de ellos? Es porque yo
             soy ellos.
           </p>
+        </Col>
+        <Col sm={12} md={6} lg={4}>
+          <img src={iAmThem} alt="chat" className="w-100" />
         </Col>
       </Row>
     </Container>
