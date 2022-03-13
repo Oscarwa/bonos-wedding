@@ -10,26 +10,27 @@ interface PerrituProps {
 
 const Perritu: FC<PerrituProps> = ({ name, photo, reverse = false, children }) => {
   return (
-    <Row className="pt-3 pb-5">
+    <Row className="pt-md-3">
       {reverse ? (
         <Col>
-          <h3 className="text-center birdlove pt-3 m-0">{name}</h3>
+          <h3 className="text-center shadow-charcoal fs-2 pt-md-3 m-0">{name}</h3>
           {children}
         </Col>
       ) : null}
-      <Col sm={6}>
+      <Col md={6}>
         <ParallaxBanner
           layers={[{ image: photo, speed: -5 }]}
           className=""
-          style={{ height: "400px", borderRadius: "20px" }}
+          style={{ height: "400px", borderRadius: "20px", filter: 'grayscale(0.7)' }}
         />
       </Col>
       {!reverse ? (
         <Col>
-          <h3 className="text-center birdlove pt-3 m-0">{name}</h3>
+          <h3 className="text-center shadow-charcoal fs-2 pt-3 m-0">{name}</h3>
           {children}
         </Col>
       ) : null}
+      <hr className="mt-3"/>
     </Row>
   );
 };

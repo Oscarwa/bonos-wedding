@@ -1,8 +1,11 @@
 import { FC } from "react";
-import { Button, Carousel, Col, Row } from "react-bootstrap";
+import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLocationDot,
+  faUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 import haciendaLogo from "../../images/hacienda.png";
 import hacienda01 from "../../images/hacienda01.jpg";
@@ -13,6 +16,7 @@ import hacienda05 from "../../images/hacienda05.jpg";
 import hacienda06 from "../../images/hacienda06.jpg";
 import hacienda07 from "../../images/hacienda07.jpg";
 import hacienda08 from "../../images/hacienda08.jpg";
+import OpenExternalLink from "../Common/OpenExternalLink";
 
 const photos = [
   { src: hacienda02 },
@@ -25,19 +29,20 @@ const photos = [
 ];
 
 const Location: FC = () => {
-
-    const handleCopyLink = () => {
-      navigator.clipboard.writeText("https://goo.gl/maps/hRaixtRT8Zoszb2fA");
-      toast.info('Enlace copiado!', {
-        position: "bottom-center",
-        autoClose: 2000,
-        hideProgressBar: true,
-        });
-    };
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText("https://goo.gl/maps/hRaixtRT8Zoszb2fA");
+    toast.info("Enlace copiado!", {
+      position: "bottom-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+  };
 
   return (
-    <section>
-      <h2 className="birdlove text-center py-4">Hacienda Tovares</h2>
+    <Container>
+      <h2 className="shadow-charcoal-2 text-center py-4 fs-1">
+        Hacienda Tovares
+      </h2>
       <Row className="d-flex flex-row align-items-center">
         <Col sm={12} md={4} lg={3}>
           <div className="hacienda-logo">
@@ -80,29 +85,23 @@ const Location: FC = () => {
           className="pt-4 d-flex justify-content-between align-items-center"
         >
           <div>
-            <h4 className="goldleaf fs-1">Ubicación</h4>
+            <h4 className="shadow-charcoal fs-2 m-0">Ubicación</h4>
           </div>
           <div className="d-flex">
             <Button
               variant="link"
               onClick={handleCopyLink}
-              className="letters h3 m-0 d-flex align-items-center"
+              className="letters d-flex align-items-center p-1 pe-3"
             >
-              <FontAwesomeIcon icon={faLocationDot} size="xs" />
-              <span className="ps-1">
-                  goo.gl/maps/hRaixtRT8Zoszb2fA
-                  </span>
+              <FontAwesomeIcon icon={faLocationDot} />
+              <span className="d-none d-md-block fs-4 ps-1">
+                goo.gl/maps/hRaixtRT8Zoszb2fA
+              </span>
             </Button>
-            <Button variant="link">
-              <a
-                href="https://goo.gl/maps/hRaixtRT8Zoszb2fA"
-                target="_blank"
-                rel="noreferrer"
-                className="color-normal"
-              >
-                <FontAwesomeIcon icon={faUpRightFromSquare} size="lg" />
-              </a>
-            </Button>
+            <OpenExternalLink
+              url="https://goo.gl/maps/hRaixtRT8Zoszb2fA"
+              dark
+            />
           </div>
         </Col>
         <Col sm={12}>
@@ -117,13 +116,13 @@ const Location: FC = () => {
           ></iframe>
         </Col>
         <img
-          className="carousel my-5"
+          className="carousel my-5 grayscale-75"
           style={{ maxHeight: 800 }}
           src={hacienda01}
           alt="instalaciones"
         />
       </Row>
-    </section>
+    </Container>
   );
 };
 

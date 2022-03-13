@@ -1,12 +1,17 @@
 import { FC } from "react";
+import { Container } from "react-bootstrap";
+import Activities from "./Activities";
 import Lodging from "./Lodging";
+import Restaurants from "./Restaurants";
 
 const Accomodation: FC = () => (
-  <section>
+  <Container>
     <Lodging />
-    {/* <Activities /> */}
-    {/* <Restaurants /> */}
-  </section>
+    <hr />
+    <Activities />
+    <hr />
+    <Restaurants />
+  </Container>
 );
 
-export default Accomodation
+export default Accomodation;

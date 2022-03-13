@@ -1,7 +1,5 @@
 import { FC } from "react";
 import Perritu from "./Perritu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import nugget from '../../images/nugget1.jpg';
 import donatella from '../../images/donatella1.jpg';
@@ -11,20 +9,8 @@ import kiki from '../../images/kiki1.jpg';
 const Family: FC = () => {
   return (
     <>
-      <h4 className="d-flex align-items-center justify-content-center text-center october-moon py-5">
-        <FontAwesomeIcon
-          icon={faHeart}
-          color="crimson"
-          size="xs"
-          className="px-2 mb-2"
-        />
+      <h4 className="d-flex align-items-center justify-content-center shadow-charcoal-2 text-center py-5">
         Our Family!
-        <FontAwesomeIcon
-          icon={faHeart}
-          color="crimson"
-          size="xs"
-          className="px-2 mb-2"
-        />
       </h4>
       <Perritu name="Nugget" photo={nugget} reverse>
         <p>

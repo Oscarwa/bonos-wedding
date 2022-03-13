@@ -1,9 +1,10 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useDatabaseObjectData, useFirebaseApp } from "reactfire";
 import { getDatabase, ref, set } from 'firebase/database';
+import Milestones from "./Milestones";
 
 const Counter: FC = () => {
     const app = useFirebaseApp();
@@ -18,14 +19,17 @@ const Counter: FC = () => {
   };
 
   return status === "success" ? (
-    <div className="mt-5">
-      <Button variant="link" onClick={handleHeartClick}>
-        <FontAwesomeIcon icon={faHeart} color="crimson" size="7x" />
-      </Button>
-      <div className="letters fs-3">
-        clicked {counter.toLocaleString()} times
-      </div>
-    </div>
+    <Container fluid className="py-4 py-lg-5 position-relative" style={{zIndex: 1200}}>
+      <Milestones progress={counter} />
+      <Container className="text-center">
+        <Button variant="link" onClick={handleHeartClick}>
+          <FontAwesomeIcon icon={faHeart} color="crimson" size="7x" />
+        </Button>
+        <div className="letters fs-3">
+          clicked {counter.toLocaleString()} times
+        </div>
+      </Container>
+    </Container>
   ) : null;
 };
 

@@ -1,18 +1,18 @@
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { ParallaxBanner } from "react-scroll-parallax";
-import her_01 from "../../images/her_01.webp";
+import her_01 from "../../images/her.jpg";
 
 const Her: FC = () => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center">
-        <h3 className="text-center october-moon py-3">Ilse Arellano</h3>
+        <h3 className="text-center shadow-charcoal-2 py-3">Ilse Arellano</h3>
       </div>
       <ParallaxBanner
-        layers={[{ image: her_01, speed: -20 }]}
+        layers={[{ image: her_01, speed: -10 }]}
         className=""
-        style={{ height: "800px" }}
+        style={{ height: "800px", filter: 'grayscale(0.9)' }}
       />
       <Row>
         <Col className="text">

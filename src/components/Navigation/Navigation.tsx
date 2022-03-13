@@ -32,12 +32,12 @@ const Navigation: FC = () => {
 
   useEffect(() => {
     setToggle(false);
-    logEvent(analytics, 'page_view', {page_path: location.pathname});
+    logEvent(analytics, "page_view", { page_path: location.pathname });
   }, [location]);
 
   return (
     <Navbar
-      className="justify-content-md-center"
+      className="justify-content-md-center bg-color-black"
       style={{ zIndex: 1000 }}
     >
       <Nav className="d-none d-md-flex align-items-center fs-8">
@@ -45,30 +45,26 @@ const Navigation: FC = () => {
         <NavigationLink text="About Us" path="/about-us" />
         <NavigationLink path="/story" text="The Story" />
         <NavigationLink text="The Wedding">
-          <NavigationLink path="/location" text="Location" heart={false} />
+          <NavigationLink path="/location" text="Location" division={false} />
           <NavigationLink
             path="/accomodation"
             text="Accomodation"
-            heart={false}
+            division={false}
           />
           <NavigationLink
             path="/gift-registry"
             text="Gift registry"
-            heart={false}
+            division={false}
           />
         </NavigationLink>
-        <NavigationLink path="/rsvp" text="RSVP" heart={false} />
+        <NavigationLink path="/rsvp" text="RSVP" division={false} />
       </Nav>
       <Nav className="w-100 d-flex d-md-none flex-column">
         <section className="w-100 d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center">
-            <FontAwesomeIcon
-              icon={faHeart}
-              size="lg"
-              color="crimson"
-              className="mx-2"
-            />
-            <h3 className="october-moon fs-4 m-0">Ilse & Oscar</h3>
+            <h3 className="justine color-cornsilk fs-4 m-0 ms-4">
+              Ilse & Oscar
+            </h3>
           </div>
           <div>
             <Button
@@ -82,21 +78,21 @@ const Navigation: FC = () => {
         </section>
         <Collapse in={toggle}>
           <div>
-            <NavigationLink path="/" text="Home" heart={false} />
-            <NavigationLink text="About Us" path="/about-us" heart={false} />
-            <NavigationLink path="/story" text="The Story" heart={false} />
-            <NavigationLink path="/location" text="Location" heart={false} />
+            <NavigationLink path="/" text="Home" division={false} />
+            <NavigationLink text="About Us" path="/about-us" division={false} />
+            <NavigationLink path="/story" text="The Story" division={false} />
+            <NavigationLink path="/location" text="Location" division={false} />
             <NavigationLink
               path="/accomodation"
               text="Accomodation"
-              heart={false}
+              division={false}
             />
             <NavigationLink
               path="/gift-registry"
               text="Gift registry"
-              heart={false}
+              division={false}
             />
-            <NavigationLink path="/rsvp" text="RSVP" heart={false} />
+            <NavigationLink path="/rsvp" text="RSVP" division={false} />
           </div>
         </Collapse>
       </Nav>

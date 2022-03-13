@@ -1,0 +1,239 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/mixins/";
+@import "../node_modules/bootstrap/scss/variables";
+
+
+@import 'reset.scss';
+@import 'variables.scss';
+
+@font-face {
+  font-family: 'HauntedMoon';
+  src: url(fonts/HauntedMoonRegular-j240.ttf);
+}
+@font-face {
+  font-family: 'OctoberMoon';
+  src: url(fonts/OctoberMoon-deql.ttf);
+}
+@font-face {
+  font-family: 'BirdLove';
+  src: url(fonts/Birdlove-jE1Pv.ttf);
+}
+@font-face {
+  font-family: 'Goldleaf';
+  src: url(fonts/GoldleafBoldPersonalUseBold-eZ4dO.ttf);
+}
+@font-face {
+  font-family: 'Letters';
+  src: url(fonts/Letters-for-Learners.ttf);
+}
+@font-face {
+  font-family: 'Josefine';
+  src: url(fonts/NT-Josefine.otf);
+}
+
+body {
+  background-color: $white;
+  color: $charcoal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefine';
+}
+
+.color-almond {
+  color: $almond !important;
+}
+.color-cornsilk {
+  color: $cornsilk !important;
+}
+.color-ivory {
+  color: $ivory !important;
+}
+.color-black {
+  color: $dark !important;
+}
+.color-charcoal {
+  color: $charcoal !important;
+}
+.color-ebony {
+  color: $ebony !important;
+}
+
+.shadow-ivory {
+  text-shadow: 1px 1px 4px $ivory;
+}
+.shadow-ivory-2 {
+  text-shadow: 2px 2px 6px $ivory;
+}
+.shadow-charcoal {
+  text-shadow: 1px 1px 4px $charcoal;
+}
+.shadow-charcoal-2 {
+  text-shadow: 2px 2px 6px $charcoal;
+}
+
+.bg-color-black {
+  background-color: $dark !important;
+}
+.bg-color-charcoal {
+  background-color: $charcoal !important;
+}
+.bg-color-ebony {
+  background-color: $ebony;
+}
+.bg-color-ivory {
+  background-color: $ivory;
+}
+.bg-color-cornsilk {
+  background-color: $cornsilk;
+}
+.bg-color-almond {
+  background-color: $almond;
+}
+
+h1 { font-size: 5rem !important;}
+h2 { font-size: 4rem !important;}
+h3 { font-size: 3rem !important;}
+h4 { font-size: 2.5rem !important;}
+h5 { font-size: 2rem !important;}
+p {
+  font-family: 'Letters'; 
+  color:$charcoal;
+  text-align: justify;
+  font-weight: bold;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.haunted-moon {
+  font-family: 'HauntedMoon';
+}
+.october-moon {
+  font-family: 'OctoberMoon';
+}
+.birdlove {
+  font-family: 'BirdLove';
+}
+.goldleaf {
+  font-family: 'Goldleaf';
+}
+.letters {
+  font-family: 'Letters';
+}
+.josefine {
+  font-family: 'Josefine';
+}
+
+html {
+  font-family: 'BirdLove';
+  font-size: 1.5rem;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.vanilla-link {
+  text-decoration: none;
+  color: $charcoal;
+  cursor: pointer;
+}
+.vanilla-link:hover {
+  color: $ebony;
+  text-decoration: none;
+}
+.link {
+  font-family: 'Goldleaf';
+  text-decoration: none;
+  color: $ebony;
+  border-bottom: 5px solid $dark;
+  cursor: pointer;
+}
+.link:hover {
+  color: $ivory;
+  border-bottom: 5px solid $ebony;
+}
+.link.w-children {
+  cursor: default;
+}
+.link.w-children:hover {
+  border-bottom: 5px solid $dark;
+}
+.link-wrapper {
+  border-top: 5px solid $charcoal;
+  left: 10px;
+  top: 50px;
+  box-shadow: 3px 3px 10px 2px $charcoal;
+}
+.gift-registry-back {
+  background-color: rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  margin: 2rem;
+}
+
+html {
+  height: 100%;
+}
+body, #root {
+  min-height: 100%;
+}
+ 
+.footer > div {
+  background-position: center -140px !important;
+  
+}
+
+button.btn-link {
+  color: $charcoal;
+  box-shadow: none;
+}
+button.btn-link:hover {
+  color: $ebony;
+}
+
+.hacienda-logo {
+  background-color: #5d523d ;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.carousel {
+    object-fit: cover;
+    width: 100%;
+    height: 600px;
+}
+
+.paypal {
+    background-color: #ffc439;
+    border: 3px solid #ffaf0c;
+    border-radius: 20px;
+    width: 350px;
+}
+
+.fa-heart {
+  color: $charcoal !important;
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+.grayscale-90 {
+  filter: grayscale(0.9);
+}
+.grayscale-75 {
+  filter: grayscale(0.75);
+}
+.grayscale-5 {
+  filter: grayscale(0.5);
+}
+.grayscale-25 {
+  filter: grayscale(0.25);
+}
+
+

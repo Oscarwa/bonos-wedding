@@ -1,0 +1,63 @@
+@import '../../variables.scss';
+
+
+.splash-image {
+    border-radius: 10px;
+}
+
+.splash-bg-gradient-1 {
+    width: calc(100% - 1.5rem);
+    background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+    min-height: 300px;
+    z-index: 1200;
+}
+
+$base: 80px;
+.line {
+    border: 3px solid $charcoal;
+    background-color: $black;
+    height: calc(80px + 3vw);
+    position: absolute;
+    width: 120%;
+    left: -25px;
+}
+
+.line1 {
+    top: calc($base + 0px + 2vw);
+    transform: rotate(3deg);
+}
+.line2 {
+    top: calc($base + 50px + 2vw);
+    transform: rotate(-7deg);
+}
+.line3 {
+    top: calc($base + 150px + 2vw);
+    transform: rotate(-2deg);
+}
+.line4 {
+    top: calc($base + 280px + 2vw);
+    transform: rotate(2deg);
+}
+.line5 {
+    top: calc($base + 450px + 2vw);
+    transform: rotate(3deg);
+}
+.line6 {
+    top: calc($base + 380px + 2vw);
+    transform: rotate(-5deg);
+}
+
+.m-wrapper {
+    width: 100%;
+    height: 0.5rem;
+    border: 1px solid $almond;
+    border-radius: 10px;
+    background-color: $ivory;
+    
+    .m-progress {
+        height: 100%;
+        background-color: $charcoal;
+        border-radius: 10px;
+        transition: all 0.5s ease-in;
+    }
+}

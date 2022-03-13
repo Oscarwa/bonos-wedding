@@ -1,7 +1,9 @@
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import Counter from "./Counter";
+import cover from "../../images/cover.jpg";
+
+import "./style.scss";
 
 const Splash: FC = () => {
   const eventDate = new Date(2022, 9, 22);
@@ -10,26 +12,50 @@ const Splash: FC = () => {
   const days = Math.ceil(diff / (1000 * 3600 * 24));
 
   return (
-    <section
-      className="d-flex align-items-center justify-content-center birdlove"
-      style={{ height: "90vh" }}
-    >
-      <div className="text-center">
-        <h2 className="october-moon p-4">Ilse & Oscar</h2>
-        <div className="d-flex align-items-center justify-content-center flex-column flex-md-row color-normal">
-          <h3>
-            Oct 22<sup>th</sup> 2022
-          </h3>
-          <FontAwesomeIcon
-            icon={faHeart}
-            color="crimson"
-            className="px-4 mb-2"
-          />
-          <h3>Queretaro</h3>
-        </div>
-        <h4 className="color-normal">{days} days to go!</h4>
+    <section style={{ minHeight: "90vh" }}>
+      <Container fluid className="p-0 position-relative pt-3">
+        <div className="line line1"></div>
+        <div className="line line2"></div>
+        <div className="line line3"></div>
+        <div className="line line4"></div>
+        <div className="line line5"></div>
+        <div className="line line6"></div>
+        <Container>
+          <Row>
+            <Col lg={6} className="position-relative">
+              <div
+                className="d-block d-lg-none color-ivory shadow-charcoal-2 position-absolute text-center pt-4 splash-bg-gradient-1"
+                style={{ zIndex: 1200 }}
+              >
+                <h1 className="fs-1 pt-1">Ilse & Oscar</h1>
+                <h2 className="fs-1 pt-1">Wedding fest</h2>
+                <h3 className="fs-3 pt-4">22 • 10 • 2022</h3>
+                <h3 className="fs-3 pt-1">Queretaro</h3>
+                <h4 className="fs-5 pt-4">{days} days to go!</h4>
+              </div>
+              <div className="d-none d-lg-block splash-bg-gradient-1 position-absolute"></div>
+              <img
+                src={cover}
+                alt="us"
+                className="w-100 position-relative splash-image"
+              />
+            </Col>
+            <Col
+              lg={6}
+              className="splash-text position-relative color-ivory shadow-ivory"
+            >
+              <div className="d-none d-lg-block text-center mt-5 pt-4">
+                <h1 className="fs-1 pt-4">Ilse & Oscar</h1>
+                <h2 className="fs-1 pt-2">Wedding fest</h2>
+                <h3 className="fs-2 pt-5">22 • 10 • 2022</h3>
+                <h3 className="fs-2 pt-1">Querétaro</h3>
+                <h4 className="fs-4 pt-4">{days} days to go!</h4>
+              </div>
+            </Col>
+          </Row>
+        </Container>
         <Counter />
-      </div>
+      </Container>
     </section>
   );
 };

@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Family from "./Family";
 import Her from "./Her";
 import Him from "./Him";
 
 const AboutUs: FC = () => {
   return (
-    <>
+    <Container>
       <Row>
         <Col lg={6}>
           <Him />
@@ -20,7 +20,7 @@ const AboutUs: FC = () => {
           <Family />
         </Col>
       </Row>
-    </>
+    </Container>
   );
 };
 

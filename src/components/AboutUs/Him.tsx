@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 import { ParallaxBanner } from "react-scroll-parallax";
-import him_01 from "../../images/him_01.webp";
+import him_01 from "../../images/him.jpeg";
 
 const Him: FC = () => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center">
-        <h3 className="text-center october-moon py-3">Oscar Barba!</h3>
+        <h3 className="text-center shadow-charcoal-2 py-3">Oscar Barba</h3>
       </div>
       <Row>
         <Col>
