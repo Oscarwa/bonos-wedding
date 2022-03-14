@@ -56,7 +56,7 @@ const Navigation: FC = () => {
               className="btn-link d-block d-md-none"
               variant="link"
             >
-              <FontAwesomeIcon icon={faBars} />
+              <FontAwesomeIcon icon={faBars} color="ivory" />
             </Button>
           </div>
         </section>
