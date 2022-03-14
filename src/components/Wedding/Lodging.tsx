@@ -40,7 +40,7 @@ const Lodging: FC = () => {
           <p>
             Código:{" "}
             <b className="color-ivory bg-color-charcoal px-2 py-1">
-              BODA ILSE {"&"} OSCAR
+              ILSE {"&"} OSCAR 22 DE OCTUBRE
             </b>
           </p>
           <Hotel
