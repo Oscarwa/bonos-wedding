@@ -32,7 +32,7 @@ const Story: FC = () => {
             su amiga como era poco probable que la fuera a ver pronto, y
             aprovechando nuestra época moderna, se animó a enviarle una
             solicitud de amistad en Facebook, Ilse aceptó esa invitación pero
-            como buenos ñoños introvertidos casi no hablabamos o nos daba pena
+            como buenos ñoños introvertidos casi no hablaban o les daba pena
             iniciar una conversación, una cosa llevo a la otra y poco tiempo
             después, un 5 de mayo se pusieron de acuerdo para su primer cita en
             'Trece Lunas' un restaurante muy alternativo y padre que está en
@@ -69,9 +69,9 @@ const Story: FC = () => {
             enojos, enseñanzas, consejos y regaños; siempre aprendiendo el uno
             del otro tantas cosas y dandose cuenta de lo compatibles que son y
             como podian mejorar apoyandose mutuamente, entendieron que esto
-            tenia futuro y a pesar de las cosas malas que pudiera haber entre
+            tenia futuro y a pesar de las diferencias que pudiera haber entre
             ellos, era cuestión de seguir trabajando puliendolas para sacar a
-            relucir lo mejor de los 2.
+            relucir lo mejor de los dos.
           </p>
         </Col>
         <Col sm={12} md={4} lg={3}>
@@ -89,7 +89,7 @@ const Story: FC = () => {
             años después decidieron adoptar a su primer mascota juntos: Nugget,
             que originalmente viviría con Oscar pero Nuggito siempre fue un bebé
             de mamá y se quedó viviendo con Ilse. Después llegó Donatella, lo
-            que creció la familia y el amor en ella.
+            que hizo crecer la familia y el amor en ella.
           </p>
         </Col>
       </Row>

@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
-import gifts from "../../images/shoppi.jpg";
-import amazon from "../../images/amazon.webp";
-import { Col, Container } from "react-bootstrap";
+import { Col, Container, ListGroup } from "react-bootstrap";
 import PayPalDonate from "./PayPalDonate";
+import gifts from "../../images/shoppi.jpg";
+import amazonWishlist from "../../images/amazon-wishlist.jpeg";
+import amazon from "../../images/amazon.webp";
 
 const GiftRegistry: FC = () => {
   return (
@@ -34,7 +35,11 @@ const GiftRegistry: FC = () => {
                         <br />
                         Wedding Fest
                       </h3>
-                      <img className="w-100 grayscale-0" src={amazon} alt="Amazon" />
+                      <img
+                        className="w-100 grayscale-0"
+                        src={amazon}
+                        alt="Amazon"
+                      />
                     </a>
                   </Col>
                 </div>
@@ -44,6 +49,39 @@ const GiftRegistry: FC = () => {
           className="grayscale-50"
           style={{ height: "600px" }}
         />
+        <Col sm={12} className="letters">
+          <p>
+            Como esto de la tecnología no es para todos aquí tienes los pasos
+            para poder hacer una compra de la mesa de regalos y asegurar que nos
+            llegue con bien.
+          </p>
+          <div style={{textAlign: 'justify'}}>
+            <ListGroup>
+              <ListGroup.Item>
+                1. Debes tener una cuenta en Amazon.
+              </ListGroup.Item>
+              <ListGroup.Item>
+                2. Abrir la mesa de regalos desde el link de arriba.
+              </ListGroup.Item>
+              <ListGroup.Item>
+                3. Elegir el o los productos que desees y agregarlos a tu
+                carrito
+              </ListGroup.Item>
+              <ListGroup.Item>
+                4. Al momento de elegir la direccion de envío, te aparecerá una
+                adicional a nombre de Oscar Barba, esa es la que debes elegir
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <img src={amazonWishlist} alt={'Direccion del wishlist'} />
+              </ListGroup.Item>
+              <ListGroup.Item>
+                5. Proceder con la compra como cualquier otra eligiendo tu
+                metodo de pago y dando click en Comprar!
+              </ListGroup.Item>
+              <ListGroup.Item>Muchas gracias</ListGroup.Item>
+            </ListGroup>
+          </div>
+        </Col>
         <div>
           <p>
             Si por alguna razon no encontraron algo que les gustara del todo,
