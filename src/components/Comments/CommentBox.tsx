@@ -39,6 +39,7 @@ const CommentBox: FC = () => {
             <Button
               className="color-ivory bg-color-charcoal goldleaf"
               onClick={handleSend}
+              disabled={text === ''}
             >
               Comentar {user? `como ${user.displayName}` : null}
             </Button>
