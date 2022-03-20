@@ -16,16 +16,13 @@ const AuthProtected: FC = ({ children }) => {
         uid: user.uid,
         canRsvp: false,
         admits: 1,
-        rsvp: {confirmed: false},
+        rsvp: { confirmed: false },
       };
       upsert(newUser);
-    } else if (!isLoading && !internalUser?.email && user) {
+    } else if (!isLoading && !internalUser?.email && user && user.email) {
       upsert({
         ...internalUser,
         email: user.email,
-        canRsvp: false,
-        rsvp: { confirmed: false },
-        admits: 1,
       });
     }
   }, [internalUser, isLoading, user, upsert]);

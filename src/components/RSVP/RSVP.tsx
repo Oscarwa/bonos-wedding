@@ -103,7 +103,7 @@ const RSVP: FC = () => {
                       checked={noPlusOne}
                       onChange={() => setNoPlusOne(!noPlusOne)}
                       label="Gracias, pero no llevaré acompañante."
-                      disabled={!!internalUser.rsvp}
+                      disabled={!!internalUser.rsvp?.confirmed}
                     />
                   </div>
                 ) : going && internalUser.admits === 1 ? (
@@ -113,7 +113,7 @@ const RSVP: FC = () => {
                       className="fs-4 letters pt-5"
                       onChange={() => setNoPlusOne(!noPlusOne)}
                       label="Comprendo que mi invitación no incluye acompañante y tampoco llevaré ilegalmente un niño."
-                      disabled={!!internalUser.rsvp}
+                      disabled={!!internalUser.rsvp?.confirmed}
                     />
                   </div>
                 ) : null}
@@ -123,7 +123,7 @@ const RSVP: FC = () => {
                     variant="dark"
                     className="goldleaf"
                     onClick={submit}
-                    disabled={!!internalUser.rsvp}
+                    disabled={!!internalUser.rsvp?.confirmed}
                   >
                     {going === null
                       ? "Enviar"
