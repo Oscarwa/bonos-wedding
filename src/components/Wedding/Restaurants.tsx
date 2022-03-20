@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Col, Row } from "react-bootstrap";
 
-import haciendaLogo from "../../images/hacienda.png";
 
 const Restaurants: FC = () => {
   return (

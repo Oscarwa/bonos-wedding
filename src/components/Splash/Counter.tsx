@@ -29,9 +29,11 @@ const Counter: FC = () => {
   };
 
 
-  const handleHeartClick = () => {
-    const newVal = counter + 1;
-    set(countRef, newVal);
+  const handleHeartClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if(event.isTrusted){
+      const newVal = counter + 1;
+      set(countRef, newVal);
+    }
   };
 
   return status === "success" ? (

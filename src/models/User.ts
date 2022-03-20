@@ -1,13 +1,19 @@
-export interface User {
+export interface IUser {
   displayName: string | null;
   photoUrl: string | null;
   email: string | null;
   uid: string;
   canRsvp: boolean;
-  rsvp?: Attendee[];
+  rsvp?: IRsvp;
+  admits?: number;
 }
 
-export interface Attendee {
+export interface IRsvp {
+  confirmed: boolean;
+  going?: boolean;
+  plusOne?: IAttendee;
+}
+
+export interface IAttendee {
   name: string;
-  phone: string;
 }

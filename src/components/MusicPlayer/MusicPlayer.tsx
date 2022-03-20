@@ -133,13 +133,13 @@ const MusicPlayer: FC = () => {
             <div className="music-icon">
               <FontAwesomeIcon icon={faCompactDisc} size="xs" />
             </div>
-            <label>{songsShuffled[songIndex].name}</label>
+            <span className="music-label">{songsShuffled[songIndex].name}</span>
           </div>
           <div className="d-flex align-items-center">
             <div className="music-icon">
               <FontAwesomeIcon icon={faUserFriends} size="xs" />
             </div>
-            <label>{songsShuffled[songIndex].artist}</label>
+            <span className="music-label">{songsShuffled[songIndex].artist}</span>
           </div>
         </div>
       </div>

@@ -1,31 +1,34 @@
-import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import { FC, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { useDatabaseObjectData, useFirebaseApp, useUser } from "reactfire";
-import { User } from "../../models/User";
+import useAppUser from "../../hooks/useAppUser";
+import { IUser } from "../../models/User";
 
 const AuthProtected: FC = ({ children }) => {
-  const app = useFirebaseApp();
-  const db = getDatabase(app);
-  const { data: user } = useUser();
-  const userRef = ref(db, `users/${user?.uid}`);
-  const { data: internalUser, status: internalStatus } = useDatabaseObjectData<User>(userRef);
+  const { user, internalUser, isLoading, upsert, auth } = useAppUser();
 
   useEffect(() => {
-    if (internalStatus === "success" && internalUser === null && user) {
-      const newUser: User = {
+    if (!isLoading && internalUser === null && user) {
+      const newUser: IUser = {
         displayName: user.displayName,
         email: user.email,
         photoUrl: user.photoURL,
         uid: user.uid,
         canRsvp: false,
+        admits: 1,
+        rsvp: {confirmed: false},
       };
-      set(userRef, newUser);
+      upsert(newUser);
+    } else if (!isLoading && !internalUser?.email && user) {
+      upsert({
+        ...internalUser,
+        email: user.email,
+        canRsvp: false,
+        rsvp: { confirmed: false },
+        admits: 1,
+      });
     }
-  }, [internalUser, internalStatus, user, userRef]);
-
-  const auth = getAuth(app);
+  }, [internalUser, isLoading, user, upsert]);
 
   const handleLogin = async () => {
     await signInWithPopup(auth, new FacebookAuthProvider());
@@ -37,7 +40,7 @@ const AuthProtected: FC = ({ children }) => {
       ) : (
         <div className="position-relative">
           <div
-            className="position-absolute w-100 h-100 d-flex align-items-center justify-content-center bg-color-charcoal-5"
+            className="p-4 position-absolute w-100 h-100 d-flex align-items-center justify-content-center bg-color-charcoal-5"
             style={{ zIndex: 1 }}
           >
             <Button variant="dark" className="goldleaf" onClick={handleLogin}>

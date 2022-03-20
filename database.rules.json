@@ -1,7 +1,23 @@
 {
-  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
   "rules": {
-    ".read": true,
-    ".write": true
+    "counter": {
+      ".read": true,
+      ".write": true
+    },
+    "messages": {
+      ".read": true,
+      ".write": "auth !== null"
+    },
+    "users": {
+      ".read": "auth.token.email === 'racso_181088@hotmail.com'",
+      ".write": "auth.token.email === 'racso_181088@hotmail.com'",
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      },
+      "undefined": {
+        ".read": true
+      }
+    }
   }
 }
