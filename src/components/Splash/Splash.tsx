@@ -1,11 +1,12 @@
 import { FC } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import Counter from "./Counter";
 import cover from "../../images/cover.jpg";
 
 import "./style.scss";
 import CommentBox from "../Comments/CommentBox";
 import CommentsSection from "../Comments/CommentsSection";
+import { Link } from "react-router-dom";
 
 const Splash: FC = () => {
   const eventDate = new Date(2022, 9, 22);
@@ -55,6 +56,15 @@ const Splash: FC = () => {
               </div>
             </Col>
           </Row>
+        </Container>
+        <Container>
+          <div className="text-center m-3">
+            <div className="letters fs-5 bold">Ya puedes realizar tu confirmación de asistencia al evento!</div>
+            <br />
+            <Link to="/rsvp">
+              <Button variant="dark">Llévame al RSVP</Button>
+            </Link>
+          </div>
         </Container>
         <Counter />
         <Container>

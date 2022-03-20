@@ -32,15 +32,23 @@ const RSVP: FC = () => {
     <Container>
       <h1 className="fs-1 text-center shadow-charcoal py-4">RSVP</h1>
       <p className="fs-5 mb-4">
-        Hola!
-        <br />
-        Gracias por ayudarnos con la coordinación confirmando tu asistencia al
-        evento, por favor inicia sesión con tu cuenta de Facebook para
-        pre-registrarte y en un momento podrás hacer tu confirmación aquí mismo.
+        Gracias por ayudarnos confirmando tu asistencia al evento. Para enviar
+        tu respuesta sólo tendrás que iniciar sesión con tu cuenta de Facebook
       </p>
       <p className="fs-5 mb-4">
-        Por favor revisa la invitación que se te envió personalmente. En la
-        parte superior se indica cuantas personas incluye tu pase.
+        Te pedimos realizar el registro y enviar tu respuesta a más tardar el
+        día <span className="shadow-charcoal">17 de Abril del 2022</span>
+      </p>
+      <p className="fs-5 mb-4">
+        Si no podrás acompañarnos, por favor de cualquier forma ingresa tu
+        respuesta seleccionando la opción de "No podré asistir"
+      </p>
+      <p className="fs-5 mb-4">
+        En la parte superior de la invitación que se te envío personalmente, se
+        indica cuantas personas incluye tu pase
+      </p>
+      <p className="fs-5 mb-4">
+        Si tienes alguna duda, que no te de pena preguntar 🙂
       </p>
       <p className="fs-5 mb-4">
         RECUERDA: esta celebración no es apta para niños 🤘🏾
@@ -57,7 +65,6 @@ const RSVP: FC = () => {
                     <div className="goldleaf fs-2">
                       {internalUser.displayName}{" "}
                       <span className="ms-2 fs-4">is ready to rock 🤘🏾</span>
-                      {/* {internalUser.rsvp.going ? "Sí" : "No"} iré */}
                       {internalUser.rsvp?.plusOne?.name ? (
                         <div className="fs-4">
                           & {internalUser.rsvp?.plusOne?.name} will join them!
