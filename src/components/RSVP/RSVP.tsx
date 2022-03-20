@@ -17,7 +17,7 @@ const RSVP: FC = () => {
     let rsvp: IRsvp = { confirmed: true, confirmedOn } as IRsvp;
     if (going) {
       rsvp.going = true;
-      if (!noPlusOne && plusOneName.length > 3) {
+      if (!noPlusOne) {
         const p1 = { name: plusOneName } as IAttendee;
         rsvp.plusOne = p1;
       }
@@ -133,7 +133,9 @@ const RSVP: FC = () => {
                     variant="dark"
                     className="goldleaf"
                     onClick={submit}
-                    disabled={!!internalUser.rsvp?.confirmed || (!disclaimer && going)}
+                    disabled={
+                      !!internalUser.rsvp?.confirmed || (!disclaimer && going)
+                    }
                   >
                     {going === null
                       ? "Enviar"
