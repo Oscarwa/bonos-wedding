@@ -12,7 +12,7 @@ const RSVP: FC = () => {
   const { internalUser, upsert } = useAppUser();
 
   const submit = () => {
-    let rsvp: IRsvp = {} as IRsvp;
+    let rsvp: IRsvp = { confirmed: true } as IRsvp;
     if (going) {
       rsvp.going = true;
       if (!noPlusOne && plusOneName.length > 3) {
@@ -34,8 +34,7 @@ const RSVP: FC = () => {
         <br />
         Gracias por ayudarnos con la coordinación confirmando tu asistencia al
         evento, por favor inicia sesión con tu cuenta de Facebook para
-        pre-registrarte y en un lapso menor a 24 horas podrás hacer tu
-        confirmación aquí mismo.
+        pre-registrarte y en un momento podrás hacer tu confirmación aquí mismo.
       </p>
       <p className="fs-5 mb-4">
         Por favor revisa la invitación que se te envió personalmente. En la
@@ -57,7 +56,9 @@ const RSVP: FC = () => {
                       {internalUser.displayName}
                       {/* {internalUser.rsvp.going ? "Sí" : "No"} iré */}
                       {internalUser.rsvp?.plusOne?.name ? (
-                        <div className="fs-4">Acompañado de {internalUser.rsvp?.plusOne?.name}</div>
+                        <div className="fs-4">
+                          Acompañado de {internalUser.rsvp?.plusOne?.name}
+                        </div>
                       ) : null}
                     </div>
                   </div>
@@ -150,8 +151,6 @@ const RSVP: FC = () => {
       ) : null}
     </Container>
   );
-
-
 };
 
 export default RSVP;
