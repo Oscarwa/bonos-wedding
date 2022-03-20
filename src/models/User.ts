@@ -6,10 +6,12 @@ export interface IUser {
   canRsvp: boolean;
   rsvp?: IRsvp;
   admits?: number;
+  isAdmin?: boolean;
 }
 
 export interface IRsvp {
   confirmed: boolean;
+  confirmedOn?: Date;
   going?: boolean;
   plusOne?: IAttendee;
 }

@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
 import { Button, Container, Form, FormControl } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useAppUser from "../../hooks/useAppUser";
 import { IAttendee, IRsvp } from "../../models/User";
 import AuthProtected from "../Common/AuthProtected";
-import RSVPManager from "./RSVPManager";
 
 const RSVP: FC = () => {
   const [going, setGoing] = useState<boolean | null>(null);
@@ -12,7 +12,8 @@ const RSVP: FC = () => {
   const { internalUser, upsert } = useAppUser();
 
   const submit = () => {
-    let rsvp: IRsvp = { confirmed: true } as IRsvp;
+    const confirmedOn = new Date();
+    let rsvp: IRsvp = { confirmed: true, confirmedOn } as IRsvp;
     if (going) {
       rsvp.going = true;
       if (!noPlusOne && plusOneName.length > 3) {
@@ -146,8 +147,10 @@ const RSVP: FC = () => {
         </AuthProtected>
       </div>
       <hr />
-      {internalUser && internalUser.uid === "8kwUWfWALIhEg2aRu9j77TrwydQ2" ? (
-        <RSVPManager />
+      {internalUser && internalUser.isAdmin ? (
+        <Link to="/rsvp-manager">
+          <Button variant="dark">Go to RSVP Manager</Button>
+        </Link>
       ) : null}
     </Container>
   );

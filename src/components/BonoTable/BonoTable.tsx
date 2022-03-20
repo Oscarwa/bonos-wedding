@@ -12,7 +12,7 @@ const BonoTable: FC<TableProps> = ({columns, data}) => {
 
     const {headerGroups, getTableBodyProps, rows, prepareRow} = table;
 
-    return (<Table striped bordered hover variant="dark">
+    return (<Table striped bordered hover variant="dark" className="fs-08">
     <thead>
        {// Loop over the header rows
        headerGroups.map(headerGroup => (
