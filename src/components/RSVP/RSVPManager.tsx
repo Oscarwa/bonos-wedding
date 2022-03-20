@@ -60,14 +60,8 @@ const RSVPManager: FC = () => {
           <div>
             <ButtonGroup>
               <Button
-                onClick={() => updateAdmits(row.original, 0)}
-                className="fs-08"
-                variant={value === undefined || value === 0 ? "light" : "dark"}
-              >
-                0
-              </Button>
-              <Button
                 onClick={() => updateAdmits(row.original, 1)}
+                disabled={!row.original.canRsvp}
                 className="fs-08"
                 variant={value === 1 ? "light" : "dark"}
               >
@@ -75,6 +69,7 @@ const RSVPManager: FC = () => {
               </Button>
               <Button
                 onClick={() => updateAdmits(row.original, 2)}
+                disabled={!row.original.canRsvp}
                 className="fs-08"
                 variant={value === 2 ? "light" : "dark"}
               >
