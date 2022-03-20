@@ -6,7 +6,7 @@ import { IAttendee, IRsvp } from "../../models/User";
 import AuthProtected from "../Common/AuthProtected";
 
 const RSVP: FC = () => {
-  const [going, setGoing] = useState<boolean | null>(null);
+  const [going, setGoing] = useState<boolean>(true);
   const [plusOneName, setPlusOneName] = useState<string>("");
   const [noPlusOne, setNoPlusOne] = useState<boolean>(false);
   const [disclaimer, setDisclaimer] = useState(false);
@@ -117,10 +117,11 @@ const RSVP: FC = () => {
                       type="checkbox"
                       className="fs-4 letters pt-5"
                       onChange={() => setDisclaimer(!disclaimer)}
+                      checked={disclaimer}
                       label={
                         internalUser.admits === 2
-                          ? "Acepto que me celebraré a lo grande en este memorable día y no llevaré ilegalmente a un niño."
-                          : "Acepto que me celebraré a lo grande en este memorable día, comprendo que mi invitación no incluye acompañante y tampoco llevaré ilegalmente a un niño."
+                          ? "Acepto que celebraré a lo grande en este día 🎉 y no llevaré ilegalmente a un niño 🌚."
+                          : "Acepto que celebraré a lo grande en este día 🎉, comprendo que mi invitación no incluye acompañante y tampoco llevaré ilegalmente a un niño 🌚."
                       }
                       disabled={!!internalUser.rsvp?.confirmed}
                     />
@@ -132,7 +133,7 @@ const RSVP: FC = () => {
                     variant="dark"
                     className="goldleaf"
                     onClick={submit}
-                    disabled={!!internalUser.rsvp?.confirmed || !disclaimer}
+                    disabled={!!internalUser.rsvp?.confirmed || (!disclaimer && going)}
                   >
                     {going === null
                       ? "Enviar"
