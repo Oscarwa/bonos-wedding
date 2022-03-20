@@ -9,10 +9,11 @@ const RSVP: FC = () => {
   const [going, setGoing] = useState<boolean | null>(null);
   const [plusOneName, setPlusOneName] = useState<string>("");
   const [noPlusOne, setNoPlusOne] = useState<boolean>(false);
+  const [disclaimer, setDisclaimer] = useState(false);
   const { internalUser, upsert } = useAppUser();
 
   const submit = () => {
-    const confirmedOn = new Date();
+    const confirmedOn = new Date().toISOString();
     let rsvp: IRsvp = { confirmed: true, confirmedOn } as IRsvp;
     if (going) {
       rsvp.going = true;
@@ -54,11 +55,12 @@ const RSVP: FC = () => {
                   <div>
                     <p>A continuación el detalle de tu confirmación:</p>
                     <div className="goldleaf fs-2">
-                      {internalUser.displayName}
+                      {internalUser.displayName}{" "}
+                      <span className="ms-2 fs-4">is ready to rock 🤘🏾</span>
                       {/* {internalUser.rsvp.going ? "Sí" : "No"} iré */}
                       {internalUser.rsvp?.plusOne?.name ? (
                         <div className="fs-4">
-                          Acompañado de {internalUser.rsvp?.plusOne?.name}
+                          & {internalUser.rsvp?.plusOne?.name} will join them!
                         </div>
                       ) : null}
                     </div>
@@ -108,13 +110,18 @@ const RSVP: FC = () => {
                       disabled={!!internalUser.rsvp?.confirmed}
                     />
                   </div>
-                ) : going && internalUser.admits === 1 ? (
+                ) : null}
+                {going ? (
                   <div>
                     <Form.Check
                       type="checkbox"
                       className="fs-4 letters pt-5"
-                      onChange={() => setNoPlusOne(!noPlusOne)}
-                      label="Comprendo que mi invitación no incluye acompañante y tampoco llevaré ilegalmente un niño."
+                      onChange={() => setDisclaimer(!disclaimer)}
+                      label={
+                        internalUser.admits === 2
+                          ? "Acepto que me celebraré a lo grande en este memorable día y no llevaré ilegalmente a un niño."
+                          : "Acepto que me celebraré a lo grande en este memorable día, comprendo que mi invitación no incluye acompañante y tampoco llevaré ilegalmente a un niño."
+                      }
                       disabled={!!internalUser.rsvp?.confirmed}
                     />
                   </div>
@@ -125,7 +132,7 @@ const RSVP: FC = () => {
                     variant="dark"
                     className="goldleaf"
                     onClick={submit}
-                    disabled={!!internalUser.rsvp?.confirmed}
+                    disabled={!!internalUser.rsvp?.confirmed || !disclaimer}
                   >
                     {going === null
                       ? "Enviar"
@@ -148,9 +155,11 @@ const RSVP: FC = () => {
       </div>
       <hr />
       {internalUser && internalUser.isAdmin ? (
-        <Link to="/rsvp-manager">
-          <Button variant="dark">Go to RSVP Manager</Button>
-        </Link>
+        <div className="text-center mb-3">
+          <Link to="/rsvp-manager">
+            <Button variant="dark">Go to RSVP Manager</Button>
+          </Link>
+        </div>
       ) : null}
     </Container>
   );

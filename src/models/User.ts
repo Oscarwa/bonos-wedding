@@ -11,7 +11,7 @@ export interface IUser {
 
 export interface IRsvp {
   confirmed: boolean;
-  confirmedOn?: Date;
+  confirmedOn?: string;
   going?: boolean;
   plusOne?: IAttendee;
 }

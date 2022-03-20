@@ -17,7 +17,7 @@ const Navigation: FC = () => {
   useEffect(() => {
     setToggle(false);
     logEvent(analytics, "page_view", { page_path: location.pathname });
-  }, [location]);
+  }, [location.pathname]);
 
   return (
     <Navbar
