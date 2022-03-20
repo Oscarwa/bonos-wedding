@@ -81,6 +81,7 @@ const RSVP: FC = () => {
                 <Form.Check
                   type="checkbox"
                   onChange={() => setGoing(true)}
+                  id="going"
                   checked={going ?? false}
                   label="Claro que sí! Ya quiero celebrar con ustedes 😊"
                   className="fs-4 letters"
@@ -88,6 +89,7 @@ const RSVP: FC = () => {
                 />
                 <Form.Check
                   type="checkbox"
+                  id="not-going"
                   onChange={() => setGoing(false)}
                   checked={going === false ?? false}
                   label="Lamentablemente no podré asistir pero muchas gracias por la invitación."
@@ -110,6 +112,7 @@ const RSVP: FC = () => {
                     />
                     <Form.Check
                       type="checkbox"
+                      id="no-plus-one"
                       className="fs-4 letters"
                       checked={noPlusOne}
                       onChange={() => setNoPlusOne(!noPlusOne)}
@@ -125,6 +128,7 @@ const RSVP: FC = () => {
                       className="fs-4 letters pt-5"
                       onChange={() => setDisclaimer(!disclaimer)}
                       checked={disclaimer}
+                      id="disclaimer"
                       label={
                         internalUser.admits === 2
                           ? "Acepto que celebraré a lo grande en este día 🎉 y no llevaré ilegalmente a un niño 🌚."
