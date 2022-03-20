@@ -82,7 +82,7 @@ const RSVPManager: FC = () => {
       { Header: "Asistirá", accessor: "rsvp.going", Cell: boolToColumn },
       { Header: "Confirmado", accessor: "rsvp.confirmed", Cell: boolToColumn },
       {
-        Header: "Confirmado",
+        Header: "Acompañante",
         accessor: "rsvp.plusOne",
         Cell: ({ value }: any) => <>{value?.name}</>,
       },
@@ -92,12 +92,6 @@ const RSVPManager: FC = () => {
 
   return (
     <section>
-      {/* {users?.map((u) => (
-        <div key={u.uid} className="d-flex">
-          <div>{u.displayName}</div>
-          <div>{u.rsvp?.attendees}</div>
-        </div>
-      ))} */}
       {!error && users ? <BonoTable data={users} columns={columns} /> : null}
     </section>
   );
