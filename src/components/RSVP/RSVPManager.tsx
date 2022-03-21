@@ -12,12 +12,8 @@ const RSVPManager: FC = () => {
 
   const { data: users, error } = useDatabaseListData<IUser>(usersRef);
 
-  const newUsers = useMemo(
-    () => users?.filter((u) => !u.canRsvp) ?? [],
-    [users]
-  );
   const missingConfirmationUsers = useMemo(
-    () => users?.filter((u) => u.canRsvp && !u.rsvp?.confirmed) ?? [],
+    () => users?.filter((u) => !u.canRsvp || !u.rsvp?.confirmed) ?? [],
     [users]
   );
   const confirmedUsers = useMemo(
@@ -109,7 +105,7 @@ const RSVPManager: FC = () => {
   const columnsConfirmed = useMemo(
     () => [
       { Header: "Nombre", accessor: "displayName" },
-      admitsColumn,
+      { Header: "Admits", accessor: "admits" },
       { Header: "Asistirá", accessor: "rsvp.going", Cell: boolToColumn },
       { Header: "Confirmado", accessor: "rsvp.confirmed", Cell: boolToColumn },
       {
@@ -118,20 +114,33 @@ const RSVPManager: FC = () => {
         Cell: ({ value }: any) => <>{value?.name}</>,
       },
     ],
-    [admitsColumn]
+    []
   );
 
   return (
     <section>
-      <div className="h5 letters mt-4">Pre-registered</div>
-      {!error && users ? (
-        <BonoTable data={newUsers} columns={columnsNew} />
-      ) : null}
-      <div className="h5 letters mt-4">Missing confirmation</div>
+      <div className="h5 letters mt-4">
+        Missing confirmation ({missingConfirmationUsers?.length} /{" "}
+        {users?.length})
+      </div>
       {!error && users ? (
         <BonoTable data={missingConfirmationUsers} columns={columnsNew} />
       ) : null}
-      <div className="h5 letters mt-4">Confirmed</div>
+      <div className="h5 letters mt-4 d-flex justify-content-between">
+        <div>
+          Confirmed ({confirmedUsers?.length} / {users?.length})
+        </div>
+        <div>
+          Going: {confirmedUsers?.filter((u) => u.rsvp?.going)?.length}{" "}
+          (plus-ones:{" "}
+          {
+            confirmedUsers?.filter((u) => u.rsvp?.going && u.rsvp.plusOne?.name)
+              ?.length
+          }
+          ) ||| Not going:{" "}
+          {confirmedUsers?.filter((u) => !u.rsvp?.going)?.length}
+        </div>
+      </div>
       {!error && users ? (
         <BonoTable data={confirmedUsers} columns={columnsConfirmed} />
       ) : null}
