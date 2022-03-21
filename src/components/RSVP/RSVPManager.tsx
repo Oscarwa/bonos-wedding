@@ -17,7 +17,14 @@ const RSVPManager: FC = () => {
     [users]
   );
   const confirmedUsers = useMemo(
-    () => users?.filter((u) => u.canRsvp && u.rsvp?.confirmed) ?? [],
+    () =>
+      users
+        ?.filter((u) => u.canRsvp && u.rsvp?.confirmed)
+        .sort(
+          (a, b) =>
+            new Date(b.rsvp!.confirmedOn!).getTime() -
+            new Date(a.rsvp!.confirmedOn!).getTime()
+        ) ?? [],
     [users]
   );
 
