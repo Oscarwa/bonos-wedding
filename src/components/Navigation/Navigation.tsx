@@ -27,6 +27,7 @@ const Navigation: FC = () => {
       <Nav className="d-none d-md-flex align-items-center fs-8">
         <NavigationLink path="/" text="Home" />
         <NavigationLink text="About Us" path="/about-us" />
+        {/* <NavigationLink text="Quiz" path="/quiz" /> */}
         <NavigationLink path="/story" text="The Story" />
         <NavigationLink text="The Wedding">
           <NavigationLink path="/location" text="Location" division={false} />

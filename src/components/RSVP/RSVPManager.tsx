@@ -12,6 +12,10 @@ const RSVPManager: FC = () => {
 
   const { data: users, error } = useDatabaseListData<IUser>(usersRef);
 
+  const newUsers = useMemo(() => users?.filter(u => !u.canRsvp) ?? [], [users]);
+  const missingConfirmationUsers = useMemo(() => users?.filter(u => u.canRsvp && !u.rsvp?.confirmed) ?? [], [users]);
+  const confirmedUsers = useMemo(() => users?.filter(u => u.canRsvp && u.rsvp?.confirmed) ?? [], [users]);
+
   const boolToColumn = ({ value }: any) => <>{!!value ? "Sí" : "No"}</>;
 
   const updateRSVP = useCallback(
@@ -92,7 +96,12 @@ const RSVPManager: FC = () => {
 
   return (
     <section>
-      {!error && users ? <BonoTable data={users} columns={columns} /> : null}
+      <div className="h5 letters mt-4">Pre-registered</div>
+      {!error && users ? <BonoTable data={newUsers} columns={columns} /> : null}
+      <div className="h5 letters mt-4">Missing confirmation</div>
+      {!error && users ? <BonoTable data={missingConfirmationUsers} columns={columns} /> : null}
+      <div className="h5 letters mt-4">Confirmed</div>
+      {!error && users ? <BonoTable data={confirmedUsers} columns={columns} /> : null}
     </section>
   );
 };
