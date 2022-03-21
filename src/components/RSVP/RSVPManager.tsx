@@ -12,9 +12,18 @@ const RSVPManager: FC = () => {
 
   const { data: users, error } = useDatabaseListData<IUser>(usersRef);
 
-  const newUsers = useMemo(() => users?.filter(u => !u.canRsvp) ?? [], [users]);
-  const missingConfirmationUsers = useMemo(() => users?.filter(u => u.canRsvp && !u.rsvp?.confirmed) ?? [], [users]);
-  const confirmedUsers = useMemo(() => users?.filter(u => u.canRsvp && u.rsvp?.confirmed) ?? [], [users]);
+  const newUsers = useMemo(
+    () => users?.filter((u) => !u.canRsvp) ?? [],
+    [users]
+  );
+  const missingConfirmationUsers = useMemo(
+    () => users?.filter((u) => u.canRsvp && !u.rsvp?.confirmed) ?? [],
+    [users]
+  );
+  const confirmedUsers = useMemo(
+    () => users?.filter((u) => u.canRsvp && u.rsvp?.confirmed) ?? [],
+    [users]
+  );
 
   const boolToColumn = ({ value }: any) => <>{!!value ? "Sí" : "No"}</>;
 
@@ -41,48 +50,66 @@ const RSVPManager: FC = () => {
     [db, users]
   );
 
-  const columns = useMemo(
+  const canRSVPColumn = useMemo(
+    () => ({
+      Header: "Puede RSVP",
+      accessor: "canRsvp",
+      Cell: ({ value, row }: any) => (
+        <>
+          <Form.Check
+            type="switch"
+            checked={value}
+            onChange={() => updateRSVP(row.original, !value)}
+          />
+        </>
+      ),
+    }),
+    [updateRSVP]
+  );
+
+  const admitsColumn = useMemo(
+    () => ({
+      Header: "Admits",
+      accessor: "admits",
+      Cell: ({ value, row }: any) => (
+        <div>
+          <ButtonGroup>
+            <Button
+              onClick={() => updateAdmits(row.original, 1)}
+              disabled={!row.original.canRsvp}
+              className="fs-08"
+              variant={value === 1 ? "light" : "dark"}
+            >
+              1
+            </Button>
+            <Button
+              onClick={() => updateAdmits(row.original, 2)}
+              disabled={!row.original.canRsvp}
+              className="fs-08"
+              variant={value === 2 ? "light" : "dark"}
+            >
+              2
+            </Button>
+          </ButtonGroup>
+        </div>
+      ),
+    }),
+    [updateAdmits]
+  );
+
+  const columnsNew = useMemo(
     () => [
       { Header: "Nombre", accessor: "displayName" },
-      {
-        Header: "Puede RSVP",
-        accessor: "canRsvp",
-        Cell: ({ value, row }: any) => (
-          <>
-            <Form.Check
-              type="switch"
-              checked={value}
-              onChange={() => updateRSVP(row.original, !value)}
-            />
-          </>
-        ),
-      },
-      {
-        Header: "Admits",
-        accessor: "admits",
-        Cell: ({ value, row }: any) => (
-          <div>
-            <ButtonGroup>
-              <Button
-                onClick={() => updateAdmits(row.original, 1)}
-                disabled={!row.original.canRsvp}
-                className="fs-08"
-                variant={value === 1 ? "light" : "dark"}
-              >
-                1
-              </Button>
-              <Button
-                onClick={() => updateAdmits(row.original, 2)}
-                disabled={!row.original.canRsvp}
-                className="fs-08"
-                variant={value === 2 ? "light" : "dark"}
-              >
-                2
-              </Button>
-            </ButtonGroup>
-          </div>
-        ),
-      },
+      canRSVPColumn,
+      admitsColumn,
+    ],
+    [canRSVPColumn, admitsColumn]
+  );
+
+  const columnsConfirmed = useMemo(
+    () => [
+      { Header: "Nombre", accessor: "displayName" },
+      admitsColumn,
       { Header: "Asistirá", accessor: "rsvp.going", Cell: boolToColumn },
       { Header: "Confirmado", accessor: "rsvp.confirmed", Cell: boolToColumn },
       {
@@ -91,17 +118,23 @@ const RSVPManager: FC = () => {
         Cell: ({ value }: any) => <>{value?.name}</>,
       },
     ],
-    [updateAdmits, updateRSVP]
+    [admitsColumn]
   );
 
   return (
     <section>
       <div className="h5 letters mt-4">Pre-registered</div>
-      {!error && users ? <BonoTable data={newUsers} columns={columns} /> : null}
+      {!error && users ? (
+        <BonoTable data={newUsers} columns={columnsNew} />
+      ) : null}
       <div className="h5 letters mt-4">Missing confirmation</div>
-      {!error && users ? <BonoTable data={missingConfirmationUsers} columns={columns} /> : null}
+      {!error && users ? (
+        <BonoTable data={missingConfirmationUsers} columns={columnsNew} />
+      ) : null}
       <div className="h5 letters mt-4">Confirmed</div>
-      {!error && users ? <BonoTable data={confirmedUsers} columns={columns} /> : null}
+      {!error && users ? (
+        <BonoTable data={confirmedUsers} columns={columnsConfirmed} />
+      ) : null}
     </section>
   );
 };
