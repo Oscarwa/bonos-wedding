@@ -69,6 +69,19 @@ const RSVPManager: FC = () => {
     }),
     [updateRSVP]
   );
+  const nameColumn = useMemo(
+    () => ({
+      Header: "Nombre",
+      accessor: "displayName",
+      Cell: ({ value, row }: any) => (
+        <>
+          <img className="me-2" src={row.original.photoUrl} alt={value} />
+          {value}
+        </>
+      ),
+    }),
+    []
+  );
 
   const admitsColumn = useMemo(
     () => ({
@@ -102,16 +115,34 @@ const RSVPManager: FC = () => {
 
   const columnsNew = useMemo(
     () => [
-      { Header: "Nombre", accessor: "displayName" },
+      nameColumn,
       canRSVPColumn,
       admitsColumn,
+      {
+        Header: "Reminder",
+        Cell: () => (
+          <a
+            href="https://api.whatsapp.com/send?text=Hola! Sabemos que aun falta mucho para la fecha del evento, pero te agradeceríamos muchísimo que, si ya sabes si nos vas a poder acompañar o no, nos apoyes llenando el pequeño formulario de RSVP 😊, son algunos pasos los que tienes que hacer:%0D%0A%0D%0A
+            1. Entra aquí: https://bonos-wedding.web.app/rsvp %0D%0A
+            2. Iniciar sesión con Facebook para tener tu nombre en nuestro registro (por favor ayúdanos a tenerlo listo a mas tardar el 17 de Abril)%0D%0A
+            3. Debes esperar un momento para que podamos darte acceso%0D%0A
+            4. (Si se tarda mucho nos puedes mandar un mensaje y queda rápido)%0D%0A
+            5. Una vez configurado, deberás ingresar de nuevo para llenar los datos de tu confirmación%0D%0A
+            6. Y listo!"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Enviar whats
+          </a>
+        ),
+      },
     ],
-    [canRSVPColumn, admitsColumn]
+    [nameColumn, canRSVPColumn, admitsColumn]
   );
 
   const columnsConfirmed = useMemo(
     () => [
-      { Header: "Nombre", accessor: "displayName" },
+      nameColumn,
       { Header: "Admits", accessor: "admits" },
       { Header: "Asistirá", accessor: "rsvp.going", Cell: boolToColumn },
       { Header: "Confirmado", accessor: "rsvp.confirmed", Cell: boolToColumn },
@@ -121,7 +152,7 @@ const RSVPManager: FC = () => {
         Cell: ({ value }: any) => <>{value?.name}</>,
       },
     ],
-    []
+    [nameColumn]
   );
 
   return (

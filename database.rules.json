@@ -9,8 +9,8 @@
       ".write": "auth !== null"
     },
     "users": {
-      ".read": "auth.token.email === 'racso_181088@hotmail.com'",
-      ".write": "auth.token.email === 'racso_181088@hotmail.com'",
+      ".read": "auth.token.email === 'racso_181088@hotmail.com' || auth.uid === 'supoLmbWSgZhhlW3xm7KFLszQZ52'",
+      ".write": "auth.token.email === 'racso_181088@hotmail.com' || auth.uid === 'supoLmbWSgZhhlW3xm7KFLszQZ52'",
       "$uid": {
         ".read": "$uid === auth.uid",
         ".write": "$uid === auth.uid"

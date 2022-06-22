@@ -13,7 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC, useMemo, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import ReactHowler from "react-howler";
-import './style.css';
+import { shuffleArray } from "../../utils/arrays";
+import "./style.css";
 
 const everlong = require("../../music/everlong.mp3");
 const cherubRock = require("../../music/01 - The Smashing Pumpkins - Cherub Rock.mp3");
@@ -35,24 +36,12 @@ const loveSong = require("../../music/The Cure - Love Song.mp3");
 const maps = require("../../music/The Yeah Yeah Yeahs - Maps.mp3");
 const timesLikeThese = require("../../music/times-like-these.mp3");
 const walk = require("../../music/walk.mp3");
-// const everlong = require('../../music/everlong.mp3');
-// const everlong = require('../../music/everlong.mp3');
-
 const MusicPlayer: FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMute, setIsMute] = useState(false);
   const [songIndex, setSongIndex] = useState(0);
   const [volume, setVolume] = useState(0.2);
 
-  const shuffleArray = (array: any[]) => {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  };
   const songsShuffled = useMemo(() => {
     const songs = [
       { src: cherubRock, name: "Cherub rock", artist: "Smashing Pumpkins" },
@@ -85,23 +74,30 @@ const MusicPlayer: FC = () => {
     ];
     const shuffled = shuffleArray(songs);
 
-    return [{src:tonightTonight, name: 'Tonight tonight', artist: 'Smashing Pumpkins'}, ...shuffled];
+    return [
+      {
+        src: tonightTonight,
+        name: "Tonight tonight",
+        artist: "Smashing Pumpkins",
+      },
+      ...shuffled,
+    ];
   }, []);
 
   const handleNext = () => {
     let newIndex = songIndex + 1;
-    if(newIndex >= songsShuffled.length) {
-        newIndex = 0;
+    if (newIndex >= songsShuffled.length) {
+      newIndex = 0;
     }
     setSongIndex(newIndex);
-}
+  };
   const handlePrevious = () => {
     let newIndex = songIndex - 1;
-    if(newIndex < 0) {
-        newIndex = songsShuffled.length - 1;
+    if (newIndex < 0) {
+      newIndex = songsShuffled.length - 1;
     }
     setSongIndex(newIndex);
-}
+  };
 
   return (
     <section className="music-player d-flex align-items-center justify-content-between">
@@ -139,7 +135,9 @@ const MusicPlayer: FC = () => {
             <div className="music-icon">
               <FontAwesomeIcon icon={faUserFriends} size="xs" />
             </div>
-            <span className="music-label">{songsShuffled[songIndex].artist}</span>
+            <span className="music-label">
+              {songsShuffled[songIndex].artist}
+            </span>
           </div>
         </div>
       </div>

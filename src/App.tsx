@@ -15,11 +15,12 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Location from './components/Wedding/Location';
 import Accomodation from './components/Wedding/Accomodation';
 import RSVP from './components/RSVP/RSVP';
+// import Game from './components/Quiz/Game';
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import Management from './components/RSVP/Management';
 
 // Import the functions you need from the SDKs you need
 import { getAuth } from 'firebase/auth';
-import Management from './components/RSVP/Management';
-// import Game from './components/Quiz/Game';
 
 const App: FC = () => {
   const app = useFirebaseApp();
@@ -41,6 +42,7 @@ const App: FC = () => {
             <Route path="/gift-registry" element={<GiftRegistry />} />
             <Route path="/rsvp" element={<RSVP />} />
             <Route path="/rsvp-manager" element={<Management />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
           <Footer />
           <MusicPlayer />
