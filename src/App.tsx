@@ -22,6 +22,7 @@ import Management from './components/RSVP/Management';
 
 // Import the functions you need from the SDKs you need
 import { getAuth } from 'firebase/auth';
+import Faq from './components/Wedding/Faq';
 
 const App: FC = () => {
   const app = useFirebaseApp();
@@ -41,6 +42,7 @@ const App: FC = () => {
             <Route path="/location" element={<Location />} />
             <Route path="/accomodation" element={<Accomodation />} />
             <Route path="/gift-registry" element={<GiftRegistry />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="/rsvp" element={<RSVP />} />
             <Route path="/rsvp-manager" element={<Management />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -36,10 +36,6 @@ const RSVP: FC = () => {
         tu respuesta sólo tendrás que iniciar sesión con tu cuenta de Facebook
       </p>
       <p className="fs-5 mb-4">
-        Te pedimos realizar el registro y enviar tu respuesta a más tardar el
-        día <span className="shadow-charcoal">17 de Abril del 2022</span>
-      </p>
-      <p className="fs-5 mb-4">
         Si no podrás acompañarnos, por favor de cualquier forma ingresa tu
         respuesta seleccionando la opción de "No podré asistir"
       </p>

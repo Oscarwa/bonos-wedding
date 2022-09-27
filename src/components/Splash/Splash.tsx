@@ -58,11 +58,11 @@ const Splash: FC = () => {
           </Row>
         </Container>
         <Container>
-          <div className="text-center m-3">
-            <div className="letters fs-5 bold">Ya puedes realizar tu confirmación de asistencia al evento!</div>
+          <div className="text-center m-3 mt-5">
+            <div className="letters fs-5 bold">Agregamos una sección donde te resolvemos la mayoría de las preguntas que puedas tener!</div>
             <br />
-            <Link to="/rsvp">
-              <Button variant="dark">Llévame al RSVP</Button>
+            <Link to="/faq">
+              <Button variant="dark">Ver Preguntas Frecuentes</Button>
             </Link>
           </div>
         </Container>

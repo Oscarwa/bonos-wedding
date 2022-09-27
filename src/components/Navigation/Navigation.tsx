@@ -41,6 +41,11 @@ const Navigation: FC = () => {
             text="Gift registry"
             division={false}
           />
+          <NavigationLink
+            path="/faq"
+            text="F.A.Q."
+            division={false}
+          />
         </NavigationLink>
         <NavigationLink path="/rsvp" text="RSVP" division={false} />
       </Nav>

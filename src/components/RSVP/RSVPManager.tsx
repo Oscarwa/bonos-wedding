@@ -1,4 +1,4 @@
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, update } from "firebase/database";
 import { FC, useCallback, useMemo } from "react";
 import { Button, ButtonGroup, Form } from "react-bootstrap";
 import { useDatabaseListData, useFirebaseApp } from "reactfire";
@@ -29,6 +29,21 @@ const RSVPManager: FC = () => {
   );
 
   const boolToColumn = ({ value }: any) => <>{!!value ? "Sí" : "No"}</>;
+
+  const manualRSVP = useCallback((row: IUser) => {
+    const u = users?.find((u) => u.uid === row.uid);
+      if (u) {
+        u.rsvp = {
+          confirmed: true,
+          confirmedOn: new Date().toISOString(),
+          going: true,
+          plusOne: { name: "" },
+        };
+        const uRef = ref(db, `users/${u.uid}`);
+        console.log(u.uid);
+        update(uRef, u);
+      }
+  }, [db, users])
 
   const updateRSVP = useCallback(
     (row: IUser, value: boolean) => {
@@ -124,7 +139,7 @@ const RSVPManager: FC = () => {
           <a
             href="https://api.whatsapp.com/send?text=Hola! Sabemos que aun falta mucho para la fecha del evento, pero te agradeceríamos muchísimo que, si ya sabes si nos vas a poder acompañar o no, nos apoyes llenando el pequeño formulario de RSVP 😊, son algunos pasos los que tienes que hacer:%0D%0A%0D%0A
             1. Entra aquí: https://bonos-wedding.web.app/rsvp %0D%0A
-            2. Iniciar sesión con Facebook para tener tu nombre en nuestro registro (por favor ayúdanos a tenerlo listo a mas tardar el 17 de Abril)%0D%0A
+            2. Iniciar sesión con Facebook para tener tu nombre en nuestro registro %0D%0A
             3. Debes esperar un momento para que podamos darte acceso%0D%0A
             4. (Si se tarda mucho nos puedes mandar un mensaje y queda rápido)%0D%0A
             5. Una vez configurado, deberás ingresar de nuevo para llenar los datos de tu confirmación%0D%0A
@@ -134,6 +149,17 @@ const RSVPManager: FC = () => {
           >
             Enviar whats
           </a>
+        ),
+      },
+      {
+        Header: "Manual",
+        accessor: "rsvp",
+        Cell: ({ value, row }: any) => (
+          <>
+            <Button size="sm" onClick={() => manualRSVP(row.original)}>
+              Manual RSVP
+            </Button>
+          </>
         ),
       },
     ],
@@ -150,6 +176,11 @@ const RSVPManager: FC = () => {
         Header: "Acompañante",
         accessor: "rsvp.plusOne",
         Cell: ({ value }: any) => <>{value?.name}</>,
+      },
+      {
+        Header: "uid",
+        accessor: "uid",
+        Cell: ({ value }: any) => <>{value}</>,
       },
     ],
     [nameColumn]
